@@ -1,6 +1,7 @@
 from bs4 import BeautifulSoup
 import requests
 import pandas as pd
+import os
 
 urls = [
     "https://www.thrill-data.com/trip-planning/crowd-calendar/universal-studios-singapore/calendar/2024",
@@ -65,5 +66,7 @@ final_df['Comment'] = final_df['Delta'].apply(adjust_comment)
 
 print(final_df.head())
 
-# Save dataset
-final_df.to_csv("cleaned_crowd_prediction_accuracy_table.csv", index=False)
+# Save dataset in data directory
+output_folder = os.path.join(os.path.dirname(__file__), "..", "data", "clean data")
+output_path = os.path.join(output_folder, "cleaned_crowd_prediction_accuracy_table.csv")
+final_df.to_csv(output_path, index=False)
