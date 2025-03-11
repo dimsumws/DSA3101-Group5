@@ -4,7 +4,17 @@ import pandas as pd
 import os
 import random
 import time
-from extract_ig_post import get_post_type
+
+
+def get_post_type(post):
+    """Determine the type of Instagram post."""
+    if post.typename == "GraphStoryImage":
+        return "Image Post"
+    elif post.typename == "GraphStoryVideo":
+        return "Video Post"
+    else:
+        return "Unknown Type"
+    
 
 def extract_story_data(username, csv_file="uss_ig_stories.csv"):
     L = instaloader.Instaloader()
@@ -32,9 +42,6 @@ def extract_story_data(username, csv_file="uss_ig_stories.csv"):
                     story_data = {
                         "highlight_title": highlight_title,
                         "shortcode": shortcode,
-                        "caption": story.caption or "No caption",
-                        "caption_hashtags": story.caption_hashtags or "No hashtags",
-                        "caption_mentions": story.caption_mentions or "No mentions",
                         "post_date": story.date_utc.strftime("%Y-%m-%d"),
                         "post_type": post_type
                     }
