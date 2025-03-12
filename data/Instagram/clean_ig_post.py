@@ -34,15 +34,18 @@ def format_comments(comments):
     return formatted_comments
 
 
-def clean_data(df):
+def clean_data(df, df2):
     df["post_date"] = pd.to_datetime(df["post_date"])
+    df2["post_date"] = pd.to_datetime(df2["post_date"])
     df["caption"] = df["caption"].apply(clean_text)
     df["comments"] = format_comments(df["comments"])
     
     # Save to a new CSV file
     df.to_csv("cleaned_instagram_data.csv", index=False)
+    df2.to_csv("cleaned_instagram_stories.csv", index=False)
 
 
 if __name__ == "__main__":
     df = pd.read_csv("uss_ig.csv")
-    clean_data(df)
+    df2 = pd.read_csv("uss_ig_stories.csv")
+    clean_data(df, df2)
