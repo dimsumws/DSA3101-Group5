@@ -1,82 +1,103 @@
 Year,Holiday Name,Date Range
-2021,New Year's Day,1 Jan 2021
-2021,Chinese New Year,12 Feb 2021 to 13 Feb 2021
-2021,Chinese New Year In Lieu,15 Feb 2021
-2021,Between Terms I & II,13 Mar 2021 to 21 Mar 2021
-2021,Good Friday,2 Apr 2021
-2021,Labour Day,1 May 2021
-2021,Labour Day In Lieu,3 May 2021
-2021,Hari Raya Puasa,13 May 2021
-2021,Vesak Day,26 May 2021
-2021,Between Semesters I & II,29 May 2021 to 27 Jun 2021
-2021,Hari Raya Haji,20 Jul 2021
-2021,National Day,9 Aug 2021
-2021,Day after National Day,10 Aug 2021
-2021,Teachers' Day,3 Sep 2021
-2021,Between Terms III & IV,4 Sep 2021 to 12 Sep 2021
-2021,Children’s Day (for primary schools and primary sections of full schools only),8 Oct 2021
-2021,Deepavali,4 Nov 2021
-2021,At End of School Year,20 Nov 2021 to 31 Dec 2021
-2022,New Year's Day,1 Jan 2022
-2022,Chinese New Year,1 Feb 2022 to 2 Feb 2022
-2022,Between Terms I & II,12 Mar 2022 to 20 Mar 2022
-2022,Good Friday,15 Apr 2022
-2022,Labour Day,1 May 2022
-2022,Hari Raya Puasa,3 May 2022
-2022,Vesak Day,15 May 2022
-2022,Vesak Day in Lieu,16 May 2022
-2022,Between Semesters I & II,28 May 2022 to 26 Jun 2022
-2022,Hari Raya Haji,10 Jul 2022
-2022,Hari Raya Haji In Lieu,11 Jul 2022
-2022,National Day,9 Aug 2022
-2022,Day after National Day,10 Aug 2022
-2022,Teachers' Day,2 Sep 2022
-2022,Between Terms III & IV,3 Sep 2022 to 11 Sep 2022
-2022,Children’s Day (for primary schools and primary sections of full schools only),7 Oct 2022
-2022,Deepavali,24 Oct 2022
-2022,At End of School Year,19 Nov 2022 to 31 Dec 2022
-2023,New Year's Day,1 Jan 2023
-2023,New Year's Day In Lieu,2 Jan 2023
-2023,Chinese New Year,22 Jan 2023 to 23 Jan 2023
-2023,Chinese New Year In Lieu,24 Jan 2023
-2023,Between Terms I & II,11 Mar 2023 to 19 Mar 2023
-2023,Good Friday,7 Apr 2023
-2023,Hari Raya Puasa,22 Apr 2023
-2023,Labour Day,1 May 2023
-2023,Vesak Day,2 Jun 2023
-2023,Between Semesters I & II,27 May 2023 to 25 Jun 2023
-2023,Hari Raya Haji,29 Jun 2023
-2023,National Day,9 Aug 2023
-2023,Between Terms III & IV,2 Sep 2023 to 10 Sep 2023
-2023,Deepavali,12 Nov 2023
-2023,Deepavali In Lieu,13 Nov 2023
-2023,At End of School Year,18 Nov 2023 to 31 Dec 2023
-2024,New Year's Day,1 Jan 2024
-2024,Chinese New Year,10 Feb 2024 to 11 Feb 2024
-2024,Chinese New Year In Lieu,12 Feb 2024 to 13 Feb 2024
-2024,Between Terms I & II,9 Mar 2024 to 17 Mar 2024
-2024,Good Friday,29 Mar 2024
-2024,Hari Raya Puasa,10 Apr 2024
-2024,Labour Day,1 May 2024
-2024,Vesak Day,22 May 2024
-2024,Between Semesters I & II,25 May 2024 to 23 Jun 2024
-2024,Hari Raya Haji,17 Jun 2024
-2024,Youth Day,1 Jul 2024
-2024,National Day,9 Aug 2024
-2024,Between Terms III & IV,31 Aug 2024 to 8 Sep 2024
-2024,Deepavali,31 Oct 2024
-2024,At End of School Year,16 Nov 2024 to 31 Dec 2024
-2025,New Year's Day,1 Jan 2025
-2025,Chinese New Year,29 Jan 2025 to 30 Jan 2025
-2025,Between Terms I & II,15 Mar 2025 to 23 Mar 2025
-2025,Hari Raya Puasa,31 Mar 2025
-2025,Good Friday,18 Apr 2025
-2025,Labour Day,1 May 2025
-2025,Vesak Day,12 May 2025
-2025,Between Semesters I & II,31 May 2025 to 29 Jun 2025
-2025,Hari Raya Haji,7 Jun 2025
-2025,National Day,9 Aug 2025
-2025,National Day In Lieu,11 Aug 2025
-2025,Between Terms III & IV,6 Sep 2025 to 14 Sep 2025
-2025,Deepavali,20 Oct 2025
-2025,At End of School Year,22 Nov 2025 to 31 Dec 2025
+2019,Between Terms I & II,Sat 16 Mar to Sun 24 Mar
+2019,Between Semesters I & II,Sat 1 Jun to Sun 30 Jun
+2019,Between Terms III & IV,Sat 7 Sep to Sun 15 Sep
+2019,At End of School Year,Sat 16 Nov to Tue 31 Dec
+2019,Teachers’ Day,Fri 6 Sep
+2019,Children’s Day             (for primary schools and primary sections of full schools only),Fri 4 Oct
+2019,Chinese New Year,Tue 5 Feb
+2019,Term II,Good Friday
+2019,Labour Day,Wed 1 May
+2019,Vesak Day,Sun 19 May
+2019,Term III,Hari Raya Puasa
+2019,National Day,Fri 9 Aug
+2019,Term IV,Hari Raya Haji
+2019,Deepavali,Sun 27 Oct
+2019,Christmas Day,Wed 25 Dec
+2020,Between Terms I & II,Sat 14 Mar to Sun 22 Mar
+2020,Between Semesters I & II,Sat 30 May to Sun 28 Jun
+2020,Between Terms III & IV,Sat 5 Sep to Sun 13 Sep
+2020,At End of School Year,Sat 21 Nov to Thu 31 Dec
+2020,Teachers’ Day,Fri 4 Sep
+2020,"Children’s Day
+            (for primary schools and primary sections of full schools only)",Fri 9 Oct
+2020,Chinese New Year,Sat 25 Jan
+2020,Term II,Good Friday
+2020,Labour Day,Fri 1 May
+2020,Vesak Day,Thu 7 May
+2020,Hari Raya Puasa,Sun 24 May
+2020,Term III,Hari Raya Haji
+2020,National Day,Sun 9 Aug
+2020,Term IV,Deepavali
+2020,Christmas Day,Fri 25 Dec
+2021,Between Terms I & II,Sat 13 Mar to Sun 21 Mar
+2021,Between Semesters I & II,Sat 29 May to Sun 27 Jun
+2021,Between Terms III & IV,Sat 4 Sep to Sun 12 Sep
+2021,At End of School Year,Sat 20 Nov to Fri 31 Dec
+2021,Day after National Day,Tue 10 Aug
+2021,Teachers’ Day,Fri 3 Sep
+2021,Children’s Day (for primary schools and primary sections of full schools only),Fri 8 Oct
+2021,Chinese New Year,Fri 12 Feb
+2021,Term II,Good Friday
+2021,Labour Day,Sat 1 May
+2021,Hari Raya Puasa,Thu 13 May
+2021,Vesak Day,Wed 26 May
+2021,Term III,Hari Raya Haji
+2021,National Day,Mon 9 Aug
+2021,Term IV,Deepavali
+2021,Christmas Day,Sat 25 Dec
+2022,Between Terms I & II,Sat 12 Mar to Sun 20 Mar
+2022,Between Semesters I & II,Sat 28 May to Sun 26 Jun
+2022,Between Terms III & IV,Sat 3 Sep to Sun 11 Sep
+2022,At End of School Year,Sat 19 Nov to Sat 31 Dec
+2022,Chinese New Year,Tue 1 Feb
+2022,Good Friday,Fri 15 Apr
+2022,Labour Day,Sun 1 May
+2022,Hari Raya Puasa,Tue 3 May
+2022,Vesak Day,Sun 15 May
+2022,Hari Raya Haji,Sun 10 Jul
+2022,National Day,Tue 9 Aug
+2022,Deepavali,Mon 24 Oct
+2022,Christmas Day,Sun 25 Dec
+2022,Day after National Day,Wed 10 Aug
+2022,Teachers’ Day,Fri 2 Sep
+2022,Children’s Day (for primary schools and primary sections of full schools only),Fri 7 Oct
+2023,Between Terms I & II,Sat 11 Mar to Sun 19 Mar
+2023,Between Semesters I & II,Sat 27 May to Sun 25 Jun
+2023,Between Terms III & IV,Sat 2 Sep to Sun 10 Sep
+2023,At End of School Year,Sat 18 Nov to Sun 31 Dec
+2023,Chinese New Year,Sun 22 Jan
+2023,Good Friday,Fri 7 Apr
+2023,Hari Raya Puasa,Sat 22 Apr
+2023,Labour Day,Mon 1 May
+2023,Vesak Day,Fri 2 Jun
+2023,Hari Raya Haji,Thu 29 Jun
+2023,National Day,Wed 9 Aug
+2023,Deepavali,Sun 12 Nov
+2023,Christmas Day,Mon 25 Dec
+2024,Between Terms I & II,Sat 9 Mar to Sun 17 Mar
+2024,Between Semesters I & II,Sat 25 May to Sun 23 Jun
+2024,Between Terms III & IV,Sat 31 Aug to Sun 8 Sep
+2024,At End of School Year,Sat 16 Nov to Tue 31 Dec
+2024,Chinese New Year,Sat 10 Feb
+2024,Good Friday,Fri 29 Mar
+2024,Hari Raya Puasa,Wed 10 Apr
+2024,Labour Day,Wed 1 May
+2024,Vesak Day,Wed 22 May
+2024,Hari Raya Haji,Mon 17 Jun
+2024,National Day,Fri 9 Aug
+2024,Deepavali,Thu 31 Oct
+2024,Christmas Day,Wed 25 Dec
+2025,Between Terms I & II,Sat 15 Mar to Sun 23 Mar
+2025,Between Semesters I & II,Sat 31 May to Sun 29 Jun
+2025,Between Terms III & IV,Sat 6 Sep to Sun 14 Sep
+2025,At End of School Year,Sat 22 Nov to Wed 31 Dec
+2025,Chinese New Year,Wed 29 Jan
+2025,Hari Raya Puasa,Mon 31 Mar
+2025,Good Friday,Fri 18 Apr
+2025,Labour Day,Thu 1 May
+2025,Vesak Day,Mon 12 May
+2025,Hari Raya Haji,Sat 7 Jun
+2025,National Day,Sat 9 Aug
+2025,Deepavali,Mon 20 Oct
+2025,Christmas Day,Thu 25 Dec

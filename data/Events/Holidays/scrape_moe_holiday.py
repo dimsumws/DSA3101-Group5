@@ -6,6 +6,8 @@ import re
 
 # List of URLs and corresponding years
 year_urls = {
+    "2019": "https://www.moe.gov.sg/news/press-releases/20180815-school-terms-and-holidays-for-2019",
+    "2020": "https://www.moe.gov.sg/news/press-releases/20190813-school-terms-and-holidays-for-2020",
     "2021": "https://www.moe.gov.sg/news/press-releases/20200817-school-terms-and-holidays-for-2021",
     "2022": "https://www.moe.gov.sg/news/press-releases/20210811-school-terms-and-holidays-for-2022",
     "2023": "https://www.moe.gov.sg/news/press-releases/20221019-school-terms-and-holidays-for-2023",
