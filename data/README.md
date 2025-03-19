@@ -1,7 +1,7 @@
 ## Data in this folder
 
 **economy**: information about the economy in Singapore     
-**events**: information about key events in Singapore
+**events**: information about key events in Singapore  
 **google_reviews**: reviews on USS scraped from Google Reviews  
 **instagram**: instagram posts and stories posted by USS    
 **meteorological**: information about the weather in Singapore  
