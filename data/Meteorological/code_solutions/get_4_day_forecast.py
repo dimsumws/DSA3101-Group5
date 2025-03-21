@@ -86,7 +86,7 @@ def main():
             rows.append(row)
 
     df = pd.DataFrame(rows)
-    csv_filename = "4_day_weather_forecasts.csv"
+    new_path = "../datasets/final_data/4_day_weather_forecasts.csv"
     df.to_csv(csv_filename, index=False)
     print(f"Saved {csv_filename}")
 
