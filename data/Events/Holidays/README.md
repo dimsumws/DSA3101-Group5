@@ -10,4 +10,6 @@ The data was obtained from Ministry of Manpower (MOM), [SOURCE](https://data.gov
 
 **daily_school_holidays_combined.csv** is a csv file containing for each day from 2021 to 2025 in a DD/MM/YYYY format, it will have a Flag (1 for Being a school/public holiday for students and 0 otherwise). It has a third column which states which holiday that specific date is if it does have a "1" flag.
 
+**add_2016_to_2018_hols.csv** is a python script to manually add from a nested list of school holidays and append it to the **daily_school_holidays_combined.csv** for the years 2016 to 2018 as they were not provided by the MOE website and hence are not able to be scraped with **scrape_moe_holiday.py**.
+
 All these data are from individual websites from MOE and data was scraped from the websites using **scrape_moe_holiday.py**, e.g [2021 School Holidays MOE](https://www.moe.gov.sg/news/press-releases/20200817-school-terms-and-holidays-for-2021).
