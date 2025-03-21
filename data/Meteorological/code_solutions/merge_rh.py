@@ -57,13 +57,13 @@ df = pd.DataFrame(rh_data)
 df = df.groupby(['date', 'station_id', 'station_name', 'latitude', 'longitude'])['relative_humidity'].mean().reset_index()
 df['relative_humidity'] = round(df["relative_humidity"],2)
 
-csv_filename = "sentosa_relative_humidity_part6.csv"
+csv_file_path = "../datasets/raw_data/sentosa_relative_humidity_part6.csv"
 df.to_csv(csv_filename, index=False)
 
 # Since each GET Request is quite long, I did the data pulling in parts,
 # Below is the part for merging all these files I had locally together into one master csv file
 # Set the folder path to wherever the files are stored in
-folder_path = r"C:\Users\ninod\sentosa_avg_rh"
+folder_path = "../datasets/raw_data"
 
 files = glob.glob(os.path.join(folder_path, "*.csv"))
 
@@ -80,10 +80,8 @@ for file in files:
     if "relative_humidity" in df.columns:
         df["relative_humidity"] = pd.to_numeric(df["relative_humidity"], errors="coerce")
 
-    # Append to main DataFrame
     main = pd.concat([main, df], ignore_index=True)
 
-# Convert Date column to datetime datatype after merging
 if "date" in main.columns:
     main["date"] = pd.to_datetime(main["date"], errors="coerce")
 
@@ -98,8 +96,8 @@ print(main.head())
 
 main=main.rename(columns={"relative_humidity":"avg_daily_relative_humidity"})
 
-# Save the final cleaned dataset
-output_file = os.path.join(folder_path, "final_merged_RH_2017_2025.csv")
+new_folder_path = "../datasets/final_data"
+output_file = os.path.join(new_folder_path, "final_merged_RH_2017_2025.csv")
 main.to_csv(output_file, index=False)
 
 print(f"Successfully saved cleaned data to {output_file}")
