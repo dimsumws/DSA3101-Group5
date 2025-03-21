@@ -62,6 +62,6 @@ else:
     # Group by the desired columns, then compute the average windspeed
     df = df.groupby(['date', 'station_id', 'station_name', 'latitude', 'longitude'])['windspeed'].mean().reset_index()
     df['windspeed'] = df["windspeed"].round(2)
-    csv_filename = "sentosa_avg_windspeed.csv"
+    file_path = "../datasets/final_data/sentosa_avg_windspeed.csv"
     df.to_csv(csv_filename, index=False)
     print(f"Saved {csv_filename}")

@@ -85,7 +85,7 @@ while current_date <= end_date:
     # Move to the next day
     current_date += timedelta(days=1)
 
-    # To avoid rate limiting (optional: adjust based on API limits)
+    # To avoid rate limiting
     time.sleep(1)
 
 # Save the collected data as JSON
@@ -95,4 +95,4 @@ with open("weather_data_enhanced.json", "w") as json_file:
 df = pd.DataFrame(all_data)
 
 # Save to CSV
-df.to_csv("24_hr_weather_forecast_data.csv", index=False)
+df.to_csv("../datasets/final_data/24_hr_weather_forecast_data.csv", index=False)

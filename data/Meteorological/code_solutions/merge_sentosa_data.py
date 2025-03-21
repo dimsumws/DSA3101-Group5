@@ -93,4 +93,3 @@ if all(w in main.columns for w in wind_cols):
 main[num_cols] = main[num_cols].round(1)
 output_file = os.path.join(destination_path, "final_augmented_weather_sentosa_data.csv")
 main.to_csv(output_file, index=False)
-print(f"Cleaned data saved to: {output_file}")
