@@ -33,3 +33,18 @@ merge_csv('Shrek 4D Adventure', 'merged_shrek.csv')
 merge_csv('Silly Swirly', 'merged_sillyswirly.csv')
 merge_csv('TRANSFORMERS The Ride', 'merged_transformers.csv')
 merge_csv('Treasure Hunters', 'merged_treasurehunters.csv')
+
+def merge_csv_full(output):
+    file_pattern = 'merged*.csv'
+    output = output
+
+    with open(output, 'w', newline='') as outfile:
+        writer = csv.writer(outfile)
+        for filename in glob.glob(file_pattern):
+            with open(filename, 'r') as infile:
+                reader = csv.reader(infile)
+                for row in reader:
+                    writer.writerow(row)
+    return
+
+merge_csv_full('all_ride_wait_times.csv')
