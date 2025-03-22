@@ -1,0 +1,46 @@
+,label,question
+0,timestamp,Timestamp
+1,visited_US,1. Have you ever been to Universal Studios?
+2,visit_freq,2. How frequently do you visit a theme park?
+3,age,3. What is your age?
+4,gender,4. What is your gender?
+5,monthly_income,5. What is your monthly income?
+6,nationality,"6. What is your nationality? If you select ""Other"", please specify."
+7,companion,7. Who do you usually go to theme parks with? (Select all that apply)
+8,ride_pref,8. What types of rides do you prefer?
+9,time_in_park,9. What time of the day are you usually in the theme park? (Select all that apply)
+10,visit_day,10. When are you most likely to visit a theme park? (Select all that apply)
+11,visit_reason,"11. Why do you visit a theme park? If you select ""Other"", please specify. (Select all that apply)"
+12,mkting_content_seen,"12. What types of theme park marketing content have you seen recently? If you select ""Other"", please specify. (Select all that apply)"
+13,mkting_content_pref,"13. What types of marketing content do you find most appealing from theme parks? If you select ""Other"", please specify. (Select all that apply)"
+14,get_ticket,14. Getting tickets was easy for me
+15,fee_pricing,"15. Fees were fairly priced (F&B, admission tickets)"
+16,queuing,16. I spent less time queueing than expected
+17,fast_pass_worth,17. Getting an express / fast pass is worth it
+18,cleanliness,18. The park was clean and well maintained
+19,facilities,"19. There were adequate facilities provided (toilets, shelters, cooling or heating, etc.)"
+20,navigation,20. I was able to navigate through the theme park easily
+21,rides,21. The rides and attractions were enjoyable
+22,theme,22. The rides and attractions help reinforce the park’s theme and atmosphere
+23,relavamce,23. The rides and attractions are relevant today
+24,staffing,24. The park was adequately staffed
+25,friendliness,25. Staff were friendly and helpful
+26,return_likelihood,26. I am likely to come back to this theme park again
+27,concern_malfucntion,27. How concerned are you of these possible situations at a theme park during your visit? (Rate each factor on a scale of 1-5) [Ride Malfunction]
+28,concern_violence,27. How concerned are you of these possible situations at a theme park during your visit? (Rate each factor on a scale of 1-5) [Violent behaviour from others]
+29,concern_crowd_crush,27. How concerned are you of these possible situations at a theme park during your visit? (Rate each factor on a scale of 1-5) [Crowd crush]
+30,concern_theft,27. How concerned are you of these possible situations at a theme park during your visit? (Rate each factor on a scale of 1-5) [Theft & Pickpocketing]
+31,concern_getting_lost,27. How concerned are you of these possible situations at a theme park during your visit? (Rate each factor on a scale of 1-5) [Getting lost or separated from friends and family]
+32,concern_medical_access,27. How concerned are you of these possible situations at a theme park during your visit? (Rate each factor on a scale of 1-5) [Lack of immediate medical attention]
+33,concern_weather,27. How concerned are you of these possible situations at a theme park during your visit? (Rate each factor on a scale of 1-5) [Sudden weather changes]
+34,concern_food_safety,27. How concerned are you of these possible situations at a theme park during your visit? (Rate each factor on a scale of 1-5) [Food contamination]
+35,visit_deterrents,"28. What dissuades you from wanting to visit a theme park? If you select ""Other"", please specify"
+36,attraction_decision,29. How do you typically decide which attractions to visit at a theme park?
+37,top_expense,"30. What do you spend the most money on in a theme park (excluding the admission ticket)? If you select ""Other"", please specify"
+38,hollywood,31. (Optional - only if you have recently been to USS) Which areas did you visit and in what order? (Select only the areas which you have visited) [Hollywood]
+39,minion_land,31. (Optional - only if you have recently been to USS) Which areas did you visit and in what order? (Select only the areas which you have visited) [Minion Land]
+40,far_far_away,31. (Optional - only if you have recently been to USS) Which areas did you visit and in what order? (Select only the areas which you have visited) [Far Far Away]
+41,lost_world,31. (Optional - only if you have recently been to USS) Which areas did you visit and in what order? (Select only the areas which you have visited) [The Lost World]
+42,ancient_egypt,31. (Optional - only if you have recently been to USS) Which areas did you visit and in what order? (Select only the areas which you have visited) [Ancient Egypt]
+43,scifi_city,31. (Optional - only if you have recently been to USS) Which areas did you visit and in what order? (Select only the areas which you have visited) [Sci-fi City]
+44,new_york,31. (Optional - only if you have recently been to USS) Which areas did you visit and in what order? (Select only the areas which you have visited) [New York]
