@@ -11,5 +11,8 @@ df = df.drop(columns = ['_id'])
 colnames = list(df)
 colnames = colnames[1:]
 df = pd.melt(df, id_vars = ['DataSeries'], value_vars = colnames, var_name = 'year_month', value_name = 'no_of_visitors')
+df['DataSeries'] = df['DataSeries'].str.lstrip()
+df['year_month'] = pd.to_datetime(df['year_month'], format = '%Y%b')
+df.columns = ['Region/Country', 'year_month', 'no_of_visitors']
 
 df.to_csv('data/singapore_tourism_data/Final/tourism.csv', index=False)
