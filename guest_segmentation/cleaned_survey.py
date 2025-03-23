@@ -1,7 +1,7 @@
 import numpy as np
 import pandas as pd
 
-df = pd.read_csv('survey_responses.csv')
+df = pd.read_csv('../data/survey_responses/survey_responses.csv')
 
 #filter for those that have been to universal studios
 df = df[df.iloc[:,1] == "Yes"]
