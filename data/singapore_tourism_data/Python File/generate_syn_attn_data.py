@@ -61,7 +61,7 @@ def main():
     if "Actual" not in df.columns:
         df["Actual"] = np.nan
 
-    df_weather = pd.read_csv("../../Meteorological/datasets/final_data/final_augmented_weather_sentosa_data.csv")
+    df_weather = pd.read_csv("../../Meteorological/datasets/final_data/merged_weather_data_clean.csv")
     df_weather.rename(columns={"date": "Date"}, inplace=True)
     df_weather["Date"] = pd.to_datetime(df_weather["Date"], dayfirst=True)
 
