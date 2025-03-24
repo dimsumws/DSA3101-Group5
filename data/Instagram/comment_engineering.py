@@ -13,6 +13,7 @@ def comments_sentiment_analysis(df):
     
     df['sentiment'] = df['comments'].apply(compute_avg_sentiment)
     df.to_csv("uss_ig_classified_sentiment.csv", index=False)
+    return df
 
 
 # idk if this should go into the same analysis script as the USJ, Tokyo Disney, Japan tourism script
@@ -34,9 +35,10 @@ def calculate_category_metrics(df):
     category_df['avg_likes'] = category_df['total_likes'] / category_df['post_count']
     category_df['avg_sentiment'] = category_df['total_sentiment'] / category_df['post_count']
 
-    return category_df
+    category_df.to_csv("category_metrics.csv", index=False)
 
 
 if __name__ == "__main__":
     df = pd.read_csv("uss_ig_classified.csv")
-    comments_sentiment_analysis(df)
+    df2 = comments_sentiment_analysis(df)
+    calculate_category_metrics(df2)
