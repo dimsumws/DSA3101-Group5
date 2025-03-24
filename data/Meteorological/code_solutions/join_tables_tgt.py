@@ -104,8 +104,6 @@ for idx, row in merged_df.iterrows():
                 merged_df.at[idx, col] = val
         synthetic_count += 1
 
-print(f"\n[✓] Synthetic forecast generated for {synthetic_count} dates.")
-
 # Save output
 output_file = os.path.join(data_dir, "merged_weather_data_clean.csv")
 merged_df.to_csv(output_file, index=False)
