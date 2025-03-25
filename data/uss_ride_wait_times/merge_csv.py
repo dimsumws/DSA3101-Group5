@@ -61,3 +61,5 @@ def merge_csv_full(output):
     return
 
 merge_csv_full('all_ride_wait_times.csv')
+
+# when using with rides.csv, include: ride_wait_times['Ride'] = ride_wait_times['Ride'].str.replace('Puss In Boots’ Giant Journey', 'Puss In Boots\' Giant Journey')
