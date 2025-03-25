@@ -9,7 +9,7 @@ df_sentiment = pd.read_csv('uss_ig_classified_sentiment.csv')
 df_sentiment['post_date'] = pd.to_datetime(df_sentiment['post_date'])
 
 # Define marketing categories and metrics
-categories = ['family_friendly', 'high_value', 'influencer', 'halloween', 'festive', 'deals_promotions', 'attraction_event']
+categories = ['family_friendly', 'high_value', 'influencer', 'halloween', 'festive', 'is_minion', 'deals_promotions', 'attraction_event']
 metrics = ['num_likes', 'num_comments', 'sentiment', 'engagement_score']
 
 # Initialize Dash app
