@@ -1,5 +1,5 @@
 import dash
-from dash import dcc, html,  dash_table, callback, Output, Input
+from dash import dcc, html, dash_table, callback, Output, Input
 import pandas as pd
 import plotly.express as px
 
@@ -17,7 +17,7 @@ app = dash.Dash(__name__)
 
 # Layout
 app.layout = html.Div([
-    html.H1("Marketing Strategy Analysis"),
+    html.H1("Marketing Strategy Engagement Over Time"),
 
     # Table displaying category metrics
     html.H3("Category Metrics"),
@@ -29,46 +29,62 @@ app.layout = html.Div([
         style_cell={'textAlign': 'left'}
     ),
 
+
     # Dropdown for selecting marketing categories
     dcc.Dropdown(
         id='category-dropdown',
         options=[{'label': cat.replace('_', ' ').title(), 'value': cat} for cat in categories],
-        value=categories,  # Default: Show all categories
-        multi=True,  
+        value=['family_friendly'],  # Default selected
+        multi=True,
         placeholder="Select Marketing Categories",
     ),
 
-    # Dropdown for selecting metric
+    # Dropdown for selecting engagement metric
     dcc.Dropdown(
         id='metric-dropdown',
-        options=[{'label': metric.replace('_', ' ').title(), 'value': metric} for metric in metrics],
-        value='num_likes',  # Default: Show Likes
-        multi=False,  
-        placeholder="Select Metric to Display",
+        options=[
+            {'label': 'Likes', 'value': 'num_likes'},
+            {'label': 'Comments', 'value': 'num_comments'},
+            {'label': 'Sentiment Score', 'value': 'sentiment_score'},
+            {'label': 'Engagement Score', 'value': 'engagement_score'}
+        ],
+        value='num_likes',
+        placeholder="Select Metric",
     ),
 
     # Graph
     dcc.Graph(id='engagement-graph'),
 ])
 
-# Callback to update the graph based on dropdown selections
+# Callback to update graph
 @callback(
     Output('engagement-graph', 'figure'),
-    Input('category-dropdown', 'value'),
-    Input('metric-dropdown', 'value')
+    [Input('category-dropdown', 'value'),
+     Input('metric-dropdown', 'value')]
 )
 def update_graph(selected_categories, selected_metric):
-    # Filter data based on selected categories
-    df_filtered = df_sentiment[df_sentiment[selected_categories].sum(axis=1) > 0]
-    
-    # Aggregate data by date
-    df_grouped = df_filtered.groupby('post_date')[selected_metric].sum().reset_index()
+    if not selected_categories:
+        return px.line(title="No Categories Selected")
 
-    # Generate graph
-    fig = px.line(df_grouped, x='post_date', y=selected_metric,
-                  title=f'{selected_metric.replace("_", " ").title()} Over Time',
-                  labels={selected_metric: selected_metric.replace("_", " ").title()})
-    
+    # Filter dataset to include only selected categories
+    filtered_df = df_sentiment[['post_date', selected_metric] + selected_categories]
+
+    # Melt dataframe to long format so that each category becomes its own line
+    melted_df = filtered_df.melt(id_vars=['post_date', selected_metric], 
+                                 value_vars=selected_categories, 
+                                 var_name='Category', 
+                                 value_name='Is_In_Category')
+
+    # Keep only rows where the category is marked as 1
+    melted_df = melted_df[melted_df['Is_In_Category'] == 1]
+
+    # Group by date and category
+    grouped_df = melted_df.groupby(['post_date', 'Category'])[selected_metric].mean().reset_index()
+
+    # Plot
+    fig = px.line(grouped_df, x='post_date', y=selected_metric, color='Category', 
+                  title="Engagement Over Time by Marketing Category")
+
     return fig
 
 # Run server
