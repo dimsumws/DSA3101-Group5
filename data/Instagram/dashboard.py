@@ -1,71 +1,76 @@
 import dash
-from dash import dcc, html
+from dash import dcc, html,  dash_table, callback, Output, Input
 import pandas as pd
 import plotly.express as px
 
-# Load the category metrics data from CSV
-df = pd.read_csv('category_metrics.csv')
+# Load data
+df_metrics = pd.read_csv('category_metrics.csv')
 df_sentiment = pd.read_csv('uss_ig_classified_sentiment.csv')
 df_sentiment['post_date'] = pd.to_datetime(df_sentiment['post_date'])
 
+# Define marketing categories and metrics
 categories = ['family_friendly', 'high_value', 'influencer', 'halloween', 'festive', 'deals_promotions', 'attraction_event']
+metrics = ['num_likes', 'num_comments', 'sentiment', 'engagement_score']
 
-# Melt the DataFrame to long format for easier plotting
-df_long = df_sentiment.melt(id_vars=['post_date', 'num_likes', 'sentiment'], value_vars=categories,
-                             var_name='category', value_name='is_in_category')
-
-# Keep only rows where the post belongs to a category
-df_long = df_long[df_long['is_in_category'] == 1]
-
-# Group by date and category, then calculate engagement (e.g., total likes or comments)
-df_engagement = df_long.groupby(['post_date', 'category']).agg({'num_likes': 'mean', 'sentiment': 'mean'}).reset_index()
-
-
-# Initialize the Dash app
+# Initialize Dash app
 app = dash.Dash(__name__)
 
-# Define the layout of the app
+# Layout
 app.layout = html.Div([
-    html.H1("Marketing Category Metrics"),
-    dash.dash_table.DataTable(
+    html.H1("Marketing Strategy Analysis"),
+
+    # Table displaying category metrics
+    html.H3("Category Metrics"),
+    dash_table.DataTable(
         id='category-metrics-table',
-        columns=[{"name": i, "id": i} for i in df.columns],  # Create table columns based on DataFrame columns
-        data=df.to_dict('records'),  # Convert DataFrame to a list of dictionaries
-        page_size=10,  # Number of rows per page
-        style_table={'overflowX': 'auto'},  # Allow horizontal scrolling
-        style_cell={
-            'textAlign': 'left',  # Align text to the left
-            'padding': '10px'  # Padding for table cells
-        },
-        style_header={
-            'backgroundColor': 'lightgrey',  # Header background color
-            'fontWeight': 'bold'  # Bold header text
-        },
+        columns=[{"name": i, "id": i} for i in df_metrics.columns],
+        data=df_metrics.to_dict('records'),
+        style_table={'overflowX': 'auto', 'margin-bottom': '20px'},
+        style_cell={'textAlign': 'left'}
     ),
-    dcc.Graph(
-        id='likes-sentiment-graph',
-        figure=px.line(df_sentiment, x='post_date', y='num_likes', title='Likes Over Time', labels={'likes': 'Total Likes'}),
+
+    # Dropdown for selecting marketing categories
+    dcc.Dropdown(
+        id='category-dropdown',
+        options=[{'label': cat.replace('_', ' ').title(), 'value': cat} for cat in categories],
+        value=categories,  # Default: Show all categories
+        multi=True,  
+        placeholder="Select Marketing Categories",
     ),
-    
-    dcc.Graph(
-        id='sentiment-graph',
-        figure=px.line(df_sentiment, x='post_date', y='sentiment', title='Sentiment Over Time', labels={'sentiment': 'Sentiment Score'}),
+
+    # Dropdown for selecting metric
+    dcc.Dropdown(
+        id='metric-dropdown',
+        options=[{'label': metric.replace('_', ' ').title(), 'value': metric} for metric in metrics],
+        value='num_likes',  # Default: Show Likes
+        multi=False,  
+        placeholder="Select Metric to Display",
     ),
-    # Engagement over time grouped by category
-    dcc.Graph(
-        id='engagement-by-category',
-        figure=px.line(df_engagement, x='post_date', y='num_likes', color='category', 
-                       title='Engagement Over Time by Marketing Category',
-                       labels={'likes': 'Total Likes', 'category': 'Marketing Category'})
-    ),
-    dcc.Graph(
-        id='comments-by-category',
-        figure=px.line(df_engagement, x='post_date', y='sentiment', color='category', 
-                       title='Comments Over Time by Marketing Category',
-                       labels={'comment': 'Total Comments', 'category': 'Marketing Category'})
-    )
+
+    # Graph
+    dcc.Graph(id='engagement-graph'),
 ])
 
-# Run the app
+# Callback to update the graph based on dropdown selections
+@callback(
+    Output('engagement-graph', 'figure'),
+    Input('category-dropdown', 'value'),
+    Input('metric-dropdown', 'value')
+)
+def update_graph(selected_categories, selected_metric):
+    # Filter data based on selected categories
+    df_filtered = df_sentiment[df_sentiment[selected_categories].sum(axis=1) > 0]
+    
+    # Aggregate data by date
+    df_grouped = df_filtered.groupby('post_date')[selected_metric].sum().reset_index()
+
+    # Generate graph
+    fig = px.line(df_grouped, x='post_date', y=selected_metric,
+                  title=f'{selected_metric.replace("_", " ").title()} Over Time',
+                  labels={selected_metric: selected_metric.replace("_", " ").title()})
+    
+    return fig
+
+# Run server
 if __name__ == '__main__':
     app.run(debug=True)
