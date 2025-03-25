@@ -33,7 +33,7 @@ def computee_post_engagement(df):
 # idk if this should go into the same analysis script as the USJ, Tokyo Disney, Japan tourism script
 def calculate_category_metrics(df):
     category_metrics = {}
-    categories = ['family_friendly', 'high_value', 'influencer', 'halloween', 'festive', 'deals_promotions', 'attraction_event']
+    categories = ['family_friendly', 'high_value', 'influencer', 'halloween', 'festive', 'is_minion', 'deals_promotions', 'attraction_event']
     for _, row in df.iterrows():
         for cat in categories:
             if cat not in category_metrics:

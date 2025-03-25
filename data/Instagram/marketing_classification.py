@@ -31,7 +31,7 @@ def is_minion_promotion(caption):
 
 def attraction_event_based(caption):
     attraction_event_keywords = [
-        "minion", "despicable me", "limited time", "attraction", "wicked", "temporary", "special event", "ride"
+        "limited time", "attraction", "wicked", "temporary", "special event", "ride"
     ]
     return any(word in caption for word in attraction_event_keywords)
 
@@ -43,6 +43,7 @@ def classify(df):
     df['influencer'] = df['caption'].apply(is_influencer).astype(int)
     df['halloween'] = df['caption'].apply(is_halloween).astype(int)
     df['festive'] = df['caption'].apply(is_festive).astype(int)
+    df['is_minion'] = df['caption'].apply(is_minion_promotion).astype(int)
     df['deals_promotions'] = df['caption'].apply(is_deals_promotions).astype(int)
     df['attraction_event'] = df['caption'].apply(attraction_event_based).astype(int)
 
