@@ -1,9 +1,12 @@
 import ast
 import re
+import os
 import pandas as pd
 from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
 from nltk.stem import WordNetLemmatizer
+
+base_dir = os.path.abspath(os.path.join(os.getcwd(), "data/Instagram/Data"))
 
 def clean_text(text):
     stop_words = set(stopwords.words('english'))
@@ -41,11 +44,11 @@ def clean_data(df, df2):
     df["comments"] = format_comments(df["comments"])
     
     # Save to a new CSV file
-    df.to_csv("cleaned_instagram_data.csv", index=False)
-    df2.to_csv("cleaned_instagram_stories.csv", index=False)
+    df.to_csv(os.path.join(base_dir, "cleaned_instagram_data.csv"), index=False)
+    df2.to_csv(os.path.join(base_dir, "cleaned_instagram_stories.csv"), index=False)
 
 
 if __name__ == "__main__":
-    df = pd.read_csv("uss_ig.csv")
-    df2 = pd.read_csv("uss_ig_stories.csv")
+    df = pd.read_csv(f"{base_dir}/uss_ig.csv")
+    df2 = pd.read_csv(f"{base_dir}/uss_ig_stories.csv")
     clean_data(df, df2)

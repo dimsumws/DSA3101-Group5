@@ -1,8 +1,11 @@
 import ast
 import pandas as pd
+import os
 from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
 
-def computee_post_engagement(df):
+base_dir = os.path.abspath(os.path.join(os.getcwd(), "data/Instagram/Data"))
+
+def compute_post_engagement(df):
     def compute_avg_sentiment(comments):
         comments = ast.literal_eval(comments)
         analyser = SentimentIntensityAnalyzer()
@@ -55,10 +58,10 @@ def calculate_category_metrics(df):
     category_df['avg_sentiment'] = category_df['total_sentiment'] / category_df['post_count']
     category_df['avg_engagement_score'] = category_df['total_engagement_score'] / category_df['post_count'] 
 
-    category_df.to_csv("category_metrics.csv", index=False)
+    category_df.to_csv(f"{base_dir}/category_metrics.csv", index=False)
 
 
 if __name__ == "__main__":
-    df = pd.read_csv("uss_ig_classified.csv")
-    df2 = computee_post_engagement(df)
+    df = pd.read_csv(f"{base_dir}/uss_ig_classified.csv")
+    df2 = compute_post_engagement(df)
     calculate_category_metrics(df2)

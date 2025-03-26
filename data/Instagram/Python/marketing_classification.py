@@ -1,4 +1,8 @@
 import pandas as pd
+import os
+
+
+base_dir = os.path.abspath(os.path.join(os.getcwd(), "data/Instagram/Data"))
 
 # Define functions for each category
 def is_family_friendly(caption):
@@ -47,9 +51,9 @@ def classify(df):
     df['deals_promotions'] = df['caption'].apply(is_deals_promotions).astype(int)
     df['attraction_event'] = df['caption'].apply(attraction_event_based).astype(int)
 
-    df.to_csv("uss_ig_classified.csv", index=False)
+    df.to_csv(f"{base_dir}/uss_ig_classified.csv", index=False)
 
 
 if __name__ == "__main__":
-    df = pd.read_csv("cleaned_instagram_data.csv")
+    df = pd.read_csv(f"{base_dir}/cleaned_instagram_data.csv")
     classify(df)
