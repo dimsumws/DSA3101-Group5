@@ -1,18 +1,24 @@
 import csv
 import glob
 
-
 def merge_csv(folder, output):
     file_pattern = 'Raw Data/' + folder + '/download*.csv'
-    output = output
+    first_file = True
 
     with open(output, 'w', newline='') as outfile:
         writer = csv.writer(outfile)
         for filename in glob.glob(file_pattern):
             with open(filename, 'r') as infile:
                 reader = csv.reader(infile)
-                for row in reader:
-                    writer.writerow(row)
+                try:
+                    headers = next(reader)
+                    if first_file:
+                        writer.writerow(headers)
+                        first_file = False
+                    for row in reader:
+                        writer.writerow(row)
+                except StopIteration:
+                    continue  # skip empty files
     return
 
 merge_csv('Accelerator', 'merged_accelerator.csv')
@@ -36,15 +42,24 @@ merge_csv('Treasure Hunters', 'merged_treasurehunters.csv')
 
 def merge_csv_full(output):
     file_pattern = 'merged*.csv'
-    output = output
+    first_file = True
 
     with open(output, 'w', newline='') as outfile:
         writer = csv.writer(outfile)
         for filename in glob.glob(file_pattern):
             with open(filename, 'r') as infile:
                 reader = csv.reader(infile)
-                for row in reader:
-                    writer.writerow(row)
+                try:
+                    headers = next(reader)
+                    if first_file:
+                        writer.writerow(headers)
+                        first_file = False
+                    for row in reader:
+                        writer.writerow(row)
+                except StopIteration:
+                    continue  # skip empty files
     return
 
 merge_csv_full('all_ride_wait_times.csv')
+
+# when using with rides.csv, include: ride_wait_times['Ride'] = ride_wait_times['Ride'].str.replace('Puss In Boots’ Giant Journey', 'Puss In Boots\' Giant Journey')
