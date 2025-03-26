@@ -1,15 +1,19 @@
 import dash
 from dash import dcc, html, dash_table, callback, Output, Input
+import os
 import pandas as pd
 import plotly.express as px
 
+# cwd = "../DSA3101-Group5"
+data_dir = os.path.abspath(os.path.join(os.getcwd(), "data/Instagram/Data"))
+
 # Load data
-df_metrics = pd.read_csv('category_metrics.csv')
-df_sentiment = pd.read_csv('uss_ig_classified_sentiment.csv')
+df_metrics = pd.read_csv(f'{data_dir}/category_metrics.csv')
+df_sentiment = pd.read_csv(f'{data_dir}/uss_ig_classified_sentiment.csv')
 df_sentiment['post_date'] = pd.to_datetime(df_sentiment['post_date'])
 
 # Define marketing categories and metrics
-categories = ['family_friendly', 'high_value', 'influencer', 'halloween', 'festive', 'deals_promotions', 'attraction_event']
+categories = ['family_friendly', 'high_value', 'influencer', 'halloween', 'festive', 'is_minion', 'deals_promotions', 'attraction_event']
 metrics = ['num_likes', 'num_comments', 'sentiment', 'engagement_score']
 
 # Initialize Dash app
