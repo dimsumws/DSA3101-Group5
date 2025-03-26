@@ -29,7 +29,7 @@ def compute_post_engagement(df):
         gamma * df['sentiment']
     )
 
-    df.to_csv("uss_ig_classified_sentiment.csv", index=False)
+    df.to_csv(f"{base_dir}/uss_ig_classified_sentiment.csv", index=False)
     return df
 
 
