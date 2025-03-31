@@ -2,6 +2,7 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import os
+import seaborn as sns
 import joblib
 from sklearn.preprocessing import StandardScaler
 from sklearn.impute import SimpleImputer
@@ -58,9 +59,8 @@ df['wait_time_roll_std_5'] = df['Actual'].rolling(window=5).mean()
 df['wait_time_roll_std_7'] = df['Actual'].rolling(window=7).std()
 df.fillna(0, inplace=True)
 
-# === Prepare evaluation data from 2022 28 December onward ===
 target = 'Actual'
-eval_df = df[df['Date'] >= '2022-12-28'].copy()
+eval_df = df[df['Date'] >= '2017-01-01'].copy()
 X_eval = eval_df.drop(columns=['Date', target])
 y_eval = eval_df[target]
 
@@ -97,23 +97,23 @@ metrics_df = pd.DataFrame({
     "Metric": ["RMSE", "R2"],
     "Value": [rmse, r2]
 })
-metrics_df.to_csv("../evaluation_metrics/gradient_boosting_metrics_2023_2025.csv", index=False)
+metrics_df.to_csv("../evaluation_metrics/gradient_boosting_metrics_2017_2025.csv", index=False)
 
 # Save Predictions vs Actuals 
 pred_vs_actual = pd.DataFrame({
     "Actual": y_eval,
     "Predicted": y_pred
 })
-pred_vs_actual.to_csv("../evaluation_metrics/predictions_vs_actuals_2023_2025.csv", index=False)
+pred_vs_actual.to_csv("../evaluation_metrics/predictions_vs_actuals_2017_2025.csv", index=False)
 
 #  Distribution Plot 
 plt.figure(figsize=(8, 5))
 plt.hist(y_eval, bins=30, alpha=0.5, label='Actual')
 plt.hist(y_pred, bins=30, alpha=0.5, label='Predicted')
-plt.title("Distribution (2023–2025): Actual vs Predicted Wait Times")
+plt.title("Distribution (2017–2025): Actual vs Predicted Wait Times")
 plt.legend()
 plt.tight_layout()
-plt.savefig("../evaluation_metrics/distribution_plot_2023_2025.png")
+plt.savefig("../evaluation_metrics/distribution_plot_2017_2025.png")
 plt.close()
 
 # Feature Importances 
@@ -124,7 +124,7 @@ if hasattr(model, "feature_importances_"):
         "Importance": model.feature_importances_
     }).sort_values(by="Importance", ascending=False)
 
-    importances.to_csv("../evaluation_metrics/feature_importance_2023_2025.csv", index=False)
+    importances.to_csv("../evaluation_metrics/feature_importance_2017_2025.csv", index=False)
 
     # Plot top 15
     top_n = 15
@@ -132,10 +132,10 @@ if hasattr(model, "feature_importances_"):
 
     plt.figure(figsize=(10, 6))
     plt.barh(top_features["Feature"][::-1], top_features["Importance"][::-1])
-    plt.title(f"Top {top_n} Most Important Features (2023–2025)")
+    plt.title(f"Top {top_n} Most Important Features (2017–2025)")
     plt.xlabel("Importance")
     plt.tight_layout()
-    plt.savefig("../evaluation_metrics/top_features_plot_2023_2025.png")
+    plt.savefig("../evaluation_metrics/top_features_plot_2017_2025.png")
     plt.close()
 
 # Save All Feature Importances 
@@ -147,21 +147,37 @@ if hasattr(model, "feature_importances_"):
     }).sort_values(by="Importance", ascending=False)
 
     # Save full feature importances to CSV
-    full_importance_path = "../evaluation_metrics/full_feature_importance_2023_2025.csv"
+    full_importance_path = "../evaluation_metrics/full_feature_importance_2017_2025.csv"
     importances.to_csv(full_importance_path, index=False)
     print(f"\n📁 All feature importances saved to {full_importance_path}\n")
 
     print(importances.to_string(index=False))
 
-
-
-# Scatterplot of Actual vs Predicted Wait Times
 plt.figure(figsize=(8, 6))
-plt.scatter(y_eval, y_pred, alpha=0.4, edgecolors='k')
-plt.plot([y_eval.min(), y_eval.max()], [y_eval.min(), y_eval.max()], 'r--', lw=2)
-plt.xlabel("Actual Wait Time")
-plt.ylabel("Predicted Wait Time")
-plt.title(f"Actual vs Predicted (2023–2025)\nRMSE={rmse:.2f}, R²={r2:.3f}")
+
+# Scatterplot with jitter using seaborn
+sns.regplot(
+    x=y_eval,
+    y=y_pred,
+    scatter_kws={'alpha': 0.5, 'edgecolor': 'k'},
+    line_kws={'color': 'red', 'linestyle': '--'},
+    x_jitter=0.8,
+    y_jitter=0.8,
+    fit_reg=False  # disables automatic regression line
+)
+
+# Manually plot diagonal line representing perfect predictions
+plt.plot(
+    [y_eval.min(), y_eval.max()],
+    [y_eval.min(), y_eval.max()],
+    'r--', lw=2
+)
+
+plt.xlabel("Actual Wait Time (min)")
+plt.ylabel("Predicted Wait Time (min)")
+plt.title(f"Actual vs Predicted (2017–2025)\nRMSE={rmse:.2f}, R²={r2:.3f}")
+
 plt.tight_layout()
-plt.savefig("../evaluation_metrics/scatterplot_actual_vs_predicted_2023_2025.png")
+plt.savefig("../evaluation_metrics/scatterplot_actual_vs_predicted_2017_2025.png")
 plt.close()
+

@@ -10,6 +10,7 @@ from sklearn.pipeline import Pipeline
 from sklearn.metrics import mean_squared_error, r2_score
 from math import sqrt
 from sklearn.feature_extraction.text import TfidfVectorizer
+import seaborn as sns
 
 ## Testing this on real world labelled data from 2022 28 Dec to 2025.
 
@@ -85,7 +86,7 @@ preprocessor = ColumnTransformer(
 
 X_eval_processed = preprocessor.fit_transform(X_eval)
 
-model = joblib.load("../models/Linear_Regression_Base.pkl")
+model = joblib.load("../models/Gradient_Boosting_Base.pkl")
 
 y_pred = model.predict(X_eval_processed)
 rmse = sqrt(mean_squared_error(y_eval, y_pred))
@@ -153,11 +154,29 @@ if hasattr(model, "feature_importances_"):
 
 # Scatterplot of Actual vs Predicted for USS Attendance
 plt.figure(figsize=(8, 6))
-plt.scatter(y_eval, y_pred, alpha=0.4, edgecolors='k')
-plt.plot([y_eval.min(), y_eval.max()], [y_eval.min(), y_eval.max()], 'r--', lw=2)
-plt.xlabel("Actual Attendance")
-plt.ylabel("Predicted Attendance")
+
+# Scatterplot with jitter using seaborn
+sns.regplot(
+    x=y_eval,
+    y=y_pred,
+    scatter_kws={'alpha': 0.5, 'edgecolor': 'k'},
+    line_kws={'color': 'red', 'linestyle': '--'},
+    x_jitter=0.8,
+    y_jitter=0.8,
+    fit_reg=False  # disables automatic regression line
+)
+
+# Manually plot diagonal line representing perfect predictions
+plt.plot(
+    [y_eval.min(), y_eval.max()],
+    [y_eval.min(), y_eval.max()],
+    'r--', lw=2
+)
+
+plt.xlabel("Actual Daily Attendance")
+plt.ylabel("Predicted Daily Attendance")
 plt.title(f"Actual vs Predicted (2017–2025)\nRMSE={rmse:.2f}, R²={r2:.3f}")
+
 plt.tight_layout()
-plt.savefig("../evaluation_metrics/scatterplot_actual_vs_predicted_2017_2025.png")
+plt.savefig("../evaluation_metrics/scatterplot_actual_vs_predicted_attdn_2017_2025.png")
 plt.close()
