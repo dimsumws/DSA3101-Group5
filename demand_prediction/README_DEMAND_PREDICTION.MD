@@ -311,18 +311,22 @@ The code to generate the model and evaluation graphs can be found in **`demand_p
 Generally across the board, the model performed well and had strong performance in wait-time prediction. Showing promise that adopting a similar methodology as the previously discussed parts can be adopted and incorporated into Individual Ride Wait Time prediction.
 
 ### Attendance Demand Prediction Figures
-<p align="center">
-  ![Scatterplot of Actual vs Predicted Wait Time values using Gradient Boosting for Minion Mayhem](demand_prediction/USS_rides_wait_time_prediction/models/minionmayhem_gb_model/best_minionmayhem_gb_model.png)
-  <br>
-  <strong>Figure 5:</strong> Scatterplot of Actual vs Predicted Wait Time values using Gradient Boosting for Minion Mayhem
-</p>
+<table>
+  <tr>
+    <td align="center">
+      <img src="demand_prediction/USS_rides_wait_time_prediction/models/minionmayhem_gb_model/best_minionmayhem_gb_model.png" alt="Scatterplot of Actual vs Predicted Wait Time values using Gradient Boosting for Minion Mayhem" width="600"/>
+      <br>
+      <strong>Figure 5:</strong> Scatterplot of Actual vs Predicted Wait Time values using Gradient Boosting for Minion Mayhem
+    </td>
+    <td align="center">
+      <img src="demand_prediction/USS_rides_wait_time_prediction/models/minionmayhem_gb_model/best_minionmayhem_feature_importance.png" alt="Top 15 Feature Importance weightage in Gradient Boosting Model" width="600"/>
+      <br>
+      <strong>Figure 6:</strong> Top 15 Feature Importance weightage in Gradient Boosting Model
+    </td>
+  </tr>
+</table>
 
-<p align="center">
-  ![Top 15 Feature Importance weightage in Gradient Boosting Model](demand_prediction/USS_rides_wait_time_prediction/models/minionmayhem_gb_model/best_minionmayhem_feature_importance.png)
-  <br>
-  <strong>Figure 6:</strong> Top 15 Feature Importance weightage in Gradient Boosting Model
-</p>
-
+---
 
 ## Conclusion
  Methodology from Daily Wait Time Prediction can be applied to individual rides. However, further steps could include using more days worth of data, as model was trained on a few months worth of data that are available publicly on **Thril Data**. More can be done utilising data from internal USS Databases as more leverage to train more robust and accurate models. Accurate Ride Wait times for individual rides are crucial to the guests experience as they allow guests to estimate and plan their route around USS with confidence and ease.
