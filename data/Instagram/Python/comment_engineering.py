@@ -53,10 +53,12 @@ def calculate_category_metrics(df):
     # Convert to DataFrame
     category_df = pd.DataFrame.from_dict(category_metrics, orient='index')
     category_df.insert(0, 'category', categories)
-    category_df['avg_likes'] = category_df['total_likes'] / category_df['post_count']
-    category_df['avg_comments'] = category_df['total_comments'] / category_df['post_count']
-    category_df['avg_sentiment'] = category_df['total_sentiment'] / category_df['post_count']
-    category_df['avg_engagement_score'] = category_df['total_engagement_score'] / category_df['post_count'] 
+    category_df['avg_likes'] = round(category_df['total_likes'] / category_df['post_count'], 2)
+    category_df['avg_comments'] = round(category_df['total_comments'] / category_df['post_count'], 2)
+    category_df['avg_sentiment'] = round(category_df['total_sentiment'] / category_df['post_count'], 2)
+    category_df['avg_engagement_score'] = round(category_df['total_engagement_score'] / category_df['post_count'], 2)
+
+    category_df = category_df.drop(columns=["total_sentiment", "total_engagement_score", "total_likes", "total_comments"])
 
     category_df.to_csv(f"{base_dir}/category_metrics.csv", index=False)
 
