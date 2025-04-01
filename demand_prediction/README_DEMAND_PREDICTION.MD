@@ -314,12 +314,12 @@ Generally across the board, the model performed well and had strong performance 
 <table>
   <tr>
     <td align="center">
-      <img src="demand_prediction/USS_rides_wait_time_prediction/models/minionmayhem_gb_model/best_minionmayhem_gb_model.png" alt="Scatterplot of Actual vs Predicted Wait Time values using Gradient Boosting for Minion Mayhem" width="600"/>
+      <img src="image.png" alt="Scatterplot of Actual vs Predicted Wait Time values using Gradient Boosting for Minion Mayhem" width="600"/>
       <br>
       <strong>Figure 5:</strong> Scatterplot of Actual vs Predicted Wait Time values using Gradient Boosting for Minion Mayhem
     </td>
     <td align="center">
-      <img src="demand_prediction/USS_rides_wait_time_prediction/models/minionmayhem_gb_model/best_minionmayhem_feature_importance.png" alt="Top 15 Feature Importance weightage in Gradient Boosting Model" width="600"/>
+      <img src="image-1.png" alt="Top 15 Feature Importance weightage in Gradient Boosting Model" width="600"/>
       <br>
       <strong>Figure 6:</strong> Top 15 Feature Importance weightage in Gradient Boosting Model
     </td>
