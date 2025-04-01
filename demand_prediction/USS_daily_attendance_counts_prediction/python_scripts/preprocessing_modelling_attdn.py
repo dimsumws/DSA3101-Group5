@@ -15,6 +15,7 @@ from sklearn.decomposition import PCA
 from xgboost import XGBRegressor
 from datetime import datetime
 from math import sqrt
+import seaborn as sns
 import os
 import joblib
 from faker import Faker
@@ -99,9 +100,6 @@ joblib.dump(tfidf_vectorizer, '../models/tfidf_vectorizer.pkl')
 X_train, X_test, y_train, y_test = train_test_split(
     X_processed, y, test_size=0.2, random_state=42
 )
-
-print(f"X_train shape: {X_train.shape}, X_test shape: {X_test.shape}")
-print(f"y_train shape: {y_train.shape}, y_test shape: {y_test.shape}")
 
 # Apply Variance Threshold
 selector = VarianceThreshold(threshold=0.01)
@@ -212,3 +210,77 @@ for scenario_name, (train_set, test_set) in scenarios.items():
 
         joblib.dump(model, model_path)
         model_store[key] = model
+
+best_model_key = "Gradient Boosting (Base)"
+best_model = model_store[best_model_key]
+y_pred = best_model.predict(X_test)
+y_eval = y_test  # actual values
+rmse = sqrt(mean_squared_error(y_eval, y_pred))
+r2 = r2_score(y_eval, y_pred)
+os.makedirs("../evaluation_metrics", exist_ok=True)
+
+# Histogram Distribution Plot 
+plt.figure(figsize=(8, 5))
+plt.hist(y_eval, bins=30, alpha=0.5, label='Actual')
+plt.hist(y_pred, bins=30, alpha=0.5, label='Predicted')
+plt.title("Distribution 2017–2025 Actual vs Predicted Attendance")
+plt.xlabel("Attendance")
+plt.ylabel("Frequency")
+plt.legend()
+plt.tight_layout()
+plt.savefig("../evaluation_metrics/distribution_plot_2017_2025.png")
+plt.close()
+
+# Scatterplot of Actual vs Predicted
+plt.figure(figsize=(8, 6))
+
+# Scatterplot with jitter 
+sns.regplot(
+    x=y_eval,
+    y=y_pred,
+    scatter_kws={'alpha': 0.5, 'edgecolor': 'k'},
+    line_kws={'color': 'red', 'linestyle': '--'},
+    x_jitter=0.8,
+    y_jitter=0.8,
+    fit_reg=False
+)
+
+# Diagonal line for best fit line
+plt.plot(
+    [y_eval.min(), y_eval.max()],
+    [y_eval.min(), y_eval.max()],
+    'r--', lw=2
+)
+
+plt.xlabel("Actual Daily Attendance")
+plt.ylabel("Predicted Daily Attendance")
+plt.title(f"Actual vs Predicted (2017–2025)\nRMSE={rmse:.2f}, R²={r2:.3f}")
+
+plt.tight_layout()
+plt.savefig("../evaluation_metrics/scatterplot_actual_vs_predicted_attdn_2017_2025.png")
+plt.close()
+
+# Feature importance (coefficients)
+if hasattr(best_model, "coef_"):
+    numeric_feature_names = numeric_features
+    tfidf_feature_names = [f"tfidf_{i}" for i in range(30)]
+    feature_names = numeric_feature_names + tfidf_feature_names
+
+    importances = pd.DataFrame({
+        "Feature": feature_names,
+        "Importance": best_model.coef_
+    }).sort_values(by="Importance", key=lambda x: np.abs(x), ascending=False)
+
+    full_importance_path = "../evaluation_metrics/feature_importance_linear_regression_2017_2025.csv"
+    importances.to_csv(full_importance_path, index=False)
+    print(importances.to_string(index=False))
+    top_n = 10
+    top_features = importances.head(top_n)
+
+    plt.figure(figsize=(10, 6))
+    plt.barh(top_features["Feature"][::-1], top_features["Importance"][::-1])
+    plt.title(f"Top {top_n} Most Important Features (Linear Regression, 2017–2025)")
+    plt.xlabel("Coefficient Importance")
+    plt.tight_layout()
+    plt.savefig("../evaluation_metrics/top_features_linear_regression_2017_2025.png")
+    plt.close()
