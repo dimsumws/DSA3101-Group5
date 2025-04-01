@@ -106,3 +106,51 @@ Visitors' preferred marketing content types were categorized as follows:
 | `engagement_based` | Interactive experiences (e.g., virtual tours, social media contests) |
 
 These transformations enabled deeper analysis into guest segments, spending behaviors, and the effectiveness of different marketing strategies.  
+
+# Data Analysis
+## Analysis of Post Metrics
+
+To analyse the post metrics from the Instagram data, follow these steps:
+
+1. Ensure you are in the `DSA3101-group5` directory.
+
+2. Run the following command in your terminal:
+
+   ```bash
+   python marketing_analysis/uss_post_insights_dashboard.py
+
+3. Once the script is running, the terminal will provide a link to access the dashboard. Open this link in your web browser to view the insights.
+
+### Dashboard Features
+The dashboard includes the following key features:
+
+1. **Summary Table**: A table summarising the following metrics for each marketing category
+- Number of Posts (`post_count`)
+- Number of Likes (`avg_likes`)
+- Number of Comments (`avg_comments`)
+- Sentiment Score (`avg_sentiment`)
+- Engagement Score (`avg_engagement_score`)
+
+2. **Comparative Line Chart**: A line chart with a dropdown menu that allows users to compare different metrics (e.g., Likes, Comments, Sentiment, Engagement Score) across various categories (e.g., Family-Friendly, High Value, Influencer, Festive, Is Minion, Deals Promotion, Attraction Event) over time.
+
+### Data Interpretation
+
+
+![Dashboard Overview](visualisations/dashboard_overview.png)
+
+On average, marketing strategies that emphasize exclusive experiences and premium offerings (`high_value`) and seasonal excitement and fear appeal (`halloween`) show higher engagement levels.
+
+Engagement levels tend to be higher from **July to October**, suggesting that this period is particularly effective for marketing campaigns.
+
+
+![Family-Friendly Engagement](visualisations/family_friendly_engagement.png)  
+![High-Value Engagement](visualisations/high_value_engagement.png)  
+
+The elevated engagement levels on `high_value` and `family_friendly` posts suggest that marketing strategies have attracted more guests interested in premium and family-oriented experiences.
+
+### Limitations
+While these insights provide valuable information, there are some limitations to consider:
+- **Limited Data Points**: The analysis is based on a relatively small dataset of just over 400 posts spanning from 2022 to 2025. This limited data may affect the reliability of the conclusions drawn and should be taken into account when generalizing findings.
+- **Higher Post Engagement**: It is important to note that higher engagement does not necessarily equate to more effective marketing strategies. Engagement metrics can also be influenced by other factors like timing of posts, au/dience demographics, where different guest segments engage differently. Additionally, high engagement does not necessarily translate into increased park attendace or revenue.
+
+Thus, while engagement metrics provide valuable insights, they should be interpreted alongside other key performance indicators.
