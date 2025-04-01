@@ -114,17 +114,20 @@ Code for the following is available in the **`data/uss_wait_times`** directory.
 | Random Forest            | VT + PCA          | 3.94      | 0.805    |
 | XGBoost                  | VT + PCA          | 3.90      | 0.809    |
 
-<p align="center">
-  <img src="USS_general_daily_wait_time_prediction/evaluation_metrics/scatterplot_actual_vs_predicted_2017_2025.png" alt="Scatterplot of Actual vs Predicted values" width="600"/>
-  <br>
-  <strong>Figure 1:</strong> Scatterplot of Actual vs Predicted values
-</p>
-
-<p align="center">
-  <img src="USS_general_daily_wait_time_prediction/evaluation_metrics/top_features_plot_2017_2025.png" alt="Top 15 Feature Importance" width="600"/>
-  <br>
-  <strong>Figure 2:</strong> Top 15 Feature Importance weightage
-</p>
+<table>
+  <tr>
+    <td align="center">
+      <img src="USS_general_daily_wait_time_prediction/evaluation_metrics/scatterplot_actual_vs_predicted_2017_2025.png" alt="Scatterplot of Actual vs Predicted values" width="600"/>
+      <br>
+      <strong>Figure 1:</strong> Scatterplot of Actual vs Predicted values
+    </td>
+    <td align="center">
+      <img src="USS_general_daily_wait_time_prediction/evaluation_metrics/top_features_plot_2017_2025.png" alt="Top 15 Feature Importance" width="600"/>
+      <br>
+      <strong>Figure 2:</strong> Top 15 Feature Importance weightage
+    </td>
+  </tr>
+</table>
 
 ---
 
@@ -260,17 +263,23 @@ Labelled data for Predicted Wait Time for each ride in USS can be found in **`da
 | XGBoost                    | VT + PCA             | 740.00    | 0.965   |
 
 ## Attendance Demand Prediction Figures
-p align="center">
-  <img src="USS_daily_attendance_counts_prediction/evaluation_metrics/scatterplot_actual_vs_predicted_attdn_2017_2025.png" alt="Scatterplot of Actual vs Predicted values" width="600"/>
-  <br>
-  <strong>Figure 3:</strong> Scatterplot of Actual vs Predicted values using Gradient Boosting
-</p>
+<table>
+  <tr>
+    <td align="center">
+      <img src="USS_daily_attendance_counts_prediction/evaluation_metrics/scatterplot_actual_vs_predicted_attdn_2017_2025.png" alt="Scatterplot of Actual vs Predicted values" width="600"/>
+      <br>
+      <strong>Figure 3:</strong> Scatterplot of Actual vs Predicted values using Gradient Boosting
+    </td>
+    <td align="center">
+      <img src="USS_daily_attendance_counts_prediction/evaluation_metrics/top_features_plot_2017_2025.png" alt="Top 10 Features Importance" width="600"/>
+      <br>
+      <strong>Figure 4:</strong> Top 10 Feature Importance weightage regarding Attendance Counts Prediction
+    </td>
+  </tr>
+</table>
 
-p align="center">
-  <img src="USS_daily_attendance_counts_prediction/evaluation_metrics/top_features_plot_2017_2025.png" alt="Top 10 Features Importance" width="600"/>
-  <br>
-  <strong>Figure 4:</strong> Top 10 Feature Importance weightage regarding Attendance Counts Prediction
-</p>
+
+---
 
 # Conclusion & Future Work
 - Linear Regression performed best when building Demand Prediction Model with synthetic Attendance Count Data
@@ -301,20 +310,22 @@ The code to generate the model and evaluation graphs can be found in **`demand_p
 ### Results:
 Generally across the board, the model performed well and had strong performance in wait-time prediction. Showing promise that adopting a similar methodology as the previously discussed parts can be adopted and incorporated into Individual Ride Wait Time prediction.
 
-## Attendance Demand Prediction Figures
-p align="center">
-  <img src="demand_prediction/USS_rides_wait_time_prediction/models/minionmayhem_gb_model/best_minionmayhem_gb_model.png" alt="Scatterplot of Actual vs Predicted values" width="600"/>
+### Attendance Demand Prediction Figures
+<p align="center">
+  ![Scatterplot of Actual vs Predicted Wait Time values using Gradient Boosting for Minion Mayhem](demand_prediction/USS_rides_wait_time_prediction/models/minionmayhem_gb_model/best_minionmayhem_gb_model.png)
   <br>
   <strong>Figure 5:</strong> Scatterplot of Actual vs Predicted Wait Time values using Gradient Boosting for Minion Mayhem
 </p>
 
-p align="center">
-  <img src="demand_prediction/USS_rides_wait_time_prediction/models/minionmayhem_gb_model/best_minionmayhem_feature_importance.png" alt="Top 10 Features Importance" width="600"/>
+<p align="center">
+  ![Top 15 Feature Importance weightage in Gradient Boosting Model](demand_prediction/USS_rides_wait_time_prediction/models/minionmayhem_gb_model/best_minionmayhem_feature_importance.png)
   <br>
   <strong>Figure 6:</strong> Top 15 Feature Importance weightage in Gradient Boosting Model
 </p>
 
-Conclusion: Methodology from Daily Wait Time Prediction can be applied to individual rides. However, further steps could include using more days worth of data, as model was trained on a few months worth of data that are available publicly on **Thril Data**. More can be done utilising data from internal USS Databases as more leverage to train more robust and accurate models. Accurate Ride Wait times for individual rides are crucial to the guests experience as they allow guests to estimate and plan their route around USS with confidence and ease.
+
+## Conclusion
+ Methodology from Daily Wait Time Prediction can be applied to individual rides. However, further steps could include using more days worth of data, as model was trained on a few months worth of data that are available publicly on **Thril Data**. More can be done utilising data from internal USS Databases as more leverage to train more robust and accurate models. Accurate Ride Wait times for individual rides are crucial to the guests experience as they allow guests to estimate and plan their route around USS with confidence and ease.
 
 ## References
 <a id="1">[1]</a> data.gov.sg. (n.d.). Retrieved 24 February 2025, from https://data.gov.sg/
