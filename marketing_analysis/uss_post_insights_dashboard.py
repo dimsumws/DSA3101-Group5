@@ -49,7 +49,7 @@ app.layout = html.Div([
         options=[
             {'label': 'Likes', 'value': 'num_likes'},
             {'label': 'Comments', 'value': 'num_comments'},
-            {'label': 'Sentiment Score', 'value': 'sentiment_score'},
+            {'label': 'Sentiment Score', 'value': 'sentiment'},
             {'label': 'Engagement Score', 'value': 'engagement_score'}
         ],
         value='num_likes',
