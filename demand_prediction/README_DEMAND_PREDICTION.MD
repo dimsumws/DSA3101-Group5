@@ -1,63 +1,172 @@
-# Demand Prediction regarding Average Daily Wait Time at Universal Studios Singapore
+# Demand Prediction for Average Daily Wait Time at Universal Studios Singapore
 
-## Overview:
-As part of Business Question 6, we would like to explore the possibility of building a demand prediction model using historical data and external factors 
-such as Weather Data and Events to predict the average daily wait time for attractions at Universal Studios Singapore (USS). Taking into account the 
-exploration of external factors effect on USS Attendance and the guest experience as a whole, we would like to channel this newfound knowledge to explore 
-using the effects of factors into building a demand prediction model. From work done under [External Factors Analysis](external_factors_analysis/README.md), it was found that elements such as Rain Forecast, Rainfal do play a role in contributing influencing wait times.
+## Overview
+As part of Business Question 6, we aimed to build a demand prediction model using historical data and external factors such as weather data and events to forecast the **average daily wait time** for attractions at Universal Studios Singapore (USS).
 
-Additionally, Events may not necessarily influence wait times whereas nationwide Holidays such as Public Holidays or School Holidays can have a more 
-significant impact on influencing general waiting time. We thus would like to investigate demand predicition modelling and then branching a similar 
-methodology to demand prediction for general attendance counts at USS on a daily basis, as well as that for individual rides.
+Leveraging the analysis done under **`external_factors_analysis/README.md`**, we observed that factors like rain forecasts and rainfall significantly influence wait times. While **events** may not always have a direct effect, school holidays and public holidays show a stronger impact.
+
+The ultimate goal is to extend this methodology beyond wait time predictions to include **daily attendance forecasts** and **individual ride wait time predictions**.
+
+---
 
 ## Data
-Before beginning with building demand prediction modelling for wait times, data would have to be collected.
+### Weather
+Weather data was collected from reliable government sources:
+- [[1] data.gov.sg](https://data.gov.sg/)
+- [[2] Meteorological Service Singapore](https://www.weather.gov.sg/home/)
 
-### Weather:
-Weather data was primarily collected from reliable government sources such as [[1] data.gov.sg](https://data.gov.sg/) and [[2]Meteorological Service Singapore](https://www.weather.gov.sg/home/). Data was broad and was filtered down to included the weather readings specific to Sentosa Island where USS is situated at. Weather data is particularly interesting to explore on how it could affect Demand and Wait Times in USS as on top of the work and thorough analysis in[[3] External Factors Analysis](external_factors_analysis/README.md), weather conditions can affect how people perceive on the worthiness of visting theme parks or going for rides, and hence affecting wait times in Theme Parks  
+The data was filtered to include only readings from **Sentosa Island** (Station ID: S60), where USS is located. API calls were automated over a date range to extract JSON readings and convert them to tabular form using Python scripts in **`data/Meteorological/code_solutions`**. Processed data is stored in **`data/Meteorological/datasets/final_data`**.
 
-Data pulling through [[1] data.gov.sg](https://data.gov.sg/) was mostly done through downloading tabular data stored in CSV files or making API calls. 
-Generally, the output of making API calls comes in a large JSON file which contains readings for multiple weather stations in Singapore. In the case of 
-Sentosa, it had a Station ID of **S60**. Since each API call only calls a specific day only, and prcoessing has to be done to extract the wanted value 
-nested within the JSON Output, as such, python code was done to iterate through a date range, extract necessary values, process them if necessary and store 
-them in Tabular CSV form for later modelling use. The [Python Scripts can be found here](data/Meteorological/code_solutions). The data is then stored in 
-[final_data](data/Meteorological/datasets/final_data)
-
-For data generated from [[2] Meteorological Service Singapore](https://www.weather.gov.sg/home/), monthly data for Sentosa Island can be downloaded a s a CSV file manually from the aforementioned website. 2016 to 2025 February data was downloaded from the website and the individual months CSV files is stored 
-[here](data/Meteorological/datasets/raw_data/daily_data_sentosa/sentosa_data.zip). The python code to merge the more than 70 CSV files and cleaning can be 
-found [here](data/Meteorological/code_solutions/merge_sentosa_data.py)  
+Monthly weather data (2016–2025) was also manually downloaded from MSS and stored in **`data/Meteorological/datasets/raw_data/daily_data_sentosa/sentosa_data.zip`**, with cleaning done via **`merge_sentosa_data.py`**.
 
 ### Events
-Next, external factors were also included into the demand prediction modelling quest, more specifically exploring Events in Singapore, Public Holidays, and 
-School Holidays
-### Events
-Events data was then represented and prepared in a tabular data form so that it can be used for modelling. From 2016 and 2025 February, every single date 
-was included as a row and a **'is_event'** flag is included. The values under this variable is **1** if that day has an Event and **0** if otherwise. The 
-definition of an Event to be included and classify the **is_event** variable to be 1 had to be laid out as there are multiple events in general in 
-Singapore, be it big or small. 
+Events were included based on their **potential impact** on USS attendance. A threshold of **50,000 attendees** was used to flag events with a likely influence. Major examples include:
+- **F1 Singapore Grand Prix**: 269,072 attendees (2024) [[3]](https://singaporegp.sg/en/news/2024/15th-edition-of-the-formula-1/)
+- **Coldplay**: >200,000 attendees
+- **Taylor Swift**: >300,000 attendees [[4]](https://www.straitstimes.com/singapore/consumer/top-tier-concerts-helped-draw-over-a-million-visitors-to-sports-hub-in-first-3-months-of-2024)
 
-As such, metrics can be used to deem whether an Event should be utilised. For Example, Events had to be siginificant and grand enough to possibly impact
-attendance counts to USS. As such, the most convenient measure of how big an event would be is the event's attendance. A threshold of **50,000** (50,000
-cumulated from all the dates of the Events )was set to filter off events that are big enough to possibily affect the USS Attendance. Such events could
-include **Formula 1 Singapore Grand Prix** which saw an attendance of *269,072* people across the Race Weekend[[4] (Singapore Grand Prix, 2024)](https:/singaporegp.sg/en/news/2024/15th-edition-of-the-formula-1/). Other siginifcant events in Singapore that occured in 2024 were **Coldplay's Adventure of a Lifetime Singapore Tour** and **Taylor Swift's Eras Tour** which saw a total attendance of over **200,000** and over **300,000** respectively across each Artists' 
-tour dates in Singapore. [[5] (Straits Times, 2024)](https://www.straitstimes.com/singapore/consumer/top-tier-concerts-helped-draw-over-a-million-visitors-to-sports-hub-in-first-3-months-of-2024)
+Events may decrease attendance (conflict of interest) or increase it (foreigners attending multiple attractions). Around **half of Taylor Swift’s attendees were tourists** [[5]](https://www.channelnewsasia.com/singapore/taylor-swift-coldplay-concerts-singapore-economy-mas-4292951).
 
-These events alone can influence attendance at Universal Studios Singapore as being high-profile, and "once-in-a-lifetime" events, 
-people may opt out a day of Universal Studios Singapore in favour of these events. Additionally, not only could these events decrease attendance, it also 
-could increase attendance to Universal Studios. Events of such a big scale can bring in tourists and foreigners from neighbouring countries and during 
-their stay in Singapore, USS may possibily be a part of their itineraries when coming to Singapore alongside the Events they attend. For example, around 
-half of the Taylor Swift concertgoers possibily came from overseas. [[6] Source](https://www.channelnewsasia.com/singapore/taylor-swift-coldplay-concerts-singapore-economy-mas-4292951)
-
-When processing the data, Events were found and filtered from multiple online sources such as [[7] Wikipedia](https://en.wikipedia.org/wiki/Main_Page), [[8] Visit Singapore](https://www.visitsingapore.com/whats-happening/all-happenings/) and [[9] The Straits Times](https://www.straitstimes.com/singapore/strong-slate-of-mice-events-around-singapore-grand-prix-period-despite-expected-fall-in-race-attendance?utm_source=chatgpt.com) to attain attendance figures and dates ranges of events.
+Data was manually gathered from [[6] Wikipedia](https://en.wikipedia.org/wiki/Main_Page), [[7] Visit Singapore](https://www.visitsingapore.com/whats-happening/all-happenings/), and [[8] The Straits Times](https://www.straitstimes.com/singapore/strong-slate-of-mice-events-around-singapore-grand-prix-period-despite-expected-fall-in-race-attendance?utm_source=chatgpt.com).
 
 ### School & Public Holidays
-School Holidays and Public Holiday data was also attained and stored in a similar fashion to the procedure with that of Event Data.
-These days are external factors that can influence USS attendance and wait times as during these days, more people have the opportunity to visit USS and
-enjoy the theme park in all its glory as these days allow Workers, Students and Families alike to take the day off from work or school.
+Holiday data (2016–2025) was scraped from:
+- [[9] MOE](https://www.moe.gov.sg/news/press-releases/20221019-school-terms-and-holidays-for-2023)
+- [[10] data.gov.sg](https://data.gov.sg/datasets?query=public+holiday&page=1&resultId=691)
 
-Data was taken from [[10] MOE](https://www.moe.gov.sg/news/press-releases/20221019-school-terms-and-holidays-for-2023) and [[11] data.gov.sg](https://data.gov.sg/datasets?query=public+holiday&page=1&resultId=691), since websites provide data on a yearly basis, the data had to be retrieved from each years respective range to cover a total date range from **2016 to 2025**. Python Code to merge the data and scrape data can be found in [Holidays](data/Events/Holidays/code_solutions), the data is then processed and merged, and the final data is stored in [Holidays/datasets](data/Events/Holidays/datasets).
+Scripts for merging and processing are located in **`data/Events/Holidays/code_solutions`**, with final data stored in **`data/Events/Holidays/datasets`**. Additional documentation is available in **`data/Events/Holidays/README_HOLIDAYS.md`**.
 
-More specification can be found [here](data/Events/Holidays/README_HOLIDAYS.md)
+### Labelled & Synthetic Data
+Labeled wait time data (2023–2024) was collected from [[11] Thrill Data](https://www.thrill-data.com/waits/park/unit/universal-studios-singapore/). To extend coverage to 2017–2023 November, **partially synthetic wait times** were generated using **Random Forest**, trained on real labeled data (from December 2023 to February 2025) and external factors. This approach ensures data continuity while simulating real-world patterns [[12] Caiola et al., 2010](https://citeseerx.ist.psu.edu/document?repid=rep1&type=pdf&doi=069e26205b9dbdc82c5ab31721b0a03f325294db).
 
+Code is available in the **`data/uss_wait_times`** directory.
 
+---
 
+## Methodology
+### Data Preprocessing
+1. **Data Aggregation:**
+   - Daily average wait times computed.
+   - Monthly tourism data aggregated and merged.
+2. **Feature Engineering:**
+   - Encoded categorical variables (e.g., holidays, weekdays).
+   - Weather metrics included temperature, rainfall, wind speed, humidity.
+   - **Time-based features**:
+     - Lag features (e.g., previous day’s wait time)
+     - Rolling averages and standard deviations (3, 5, 7-day)
+     - Holiday-weekend interaction terms
+
+### Modelling Approach
+- Machine Learning Models evaluated:
+  - Linear Regression, Ridge, Lasso
+  - Support Vector Regression
+  - Random Forest
+  - XGBoost
+  - Gradient Boosting
+
+- Preprocessing scenarios:
+  - **Base**, **Variance Threshold (VT)**, **PCA**, and **PCA & VT**
+
+- **Hyperparameter tuning:**
+  - Conducted using `RandomSearchCV` from **scikit-learn**
+
+- **Final model:**
+  - **Gradient Boosting Regressor (Base)** was selected due to:
+    - Highest **R² = 0.900**, lowest **RMSE = 2.82**
+    - Outperformed models with additional preprocessing (PCA or VT), suggesting raw features retained more useful signals
+
+---
+
+## Results
+### Performance Summary
+#### Base Machine Learning Models
+| Model                      | Preprocessing | Test RMSE | Test R²  |
+|----------------------------|---------------|-----------|----------|
+| Linear Regression          | Base          | 2.82      | 0.900    |
+| Ridge Regression           | Base          | 2.82      | 0.900    |
+| Lasso Regression           | Base          | 2.89      | 0.895    |
+| Support Vector Regression  | Base          | 3.30      | 0.863    |
+| **Gradient Boosting**      | **Base**      | **2.48**  | **0.915**|
+| Random Forest              | Base          | 3.04      | 0.884    |
+| XGBoost                    | Base          | 2.83      | 0.899    |
+
+#### Machine Learning Models With Preprocessing
+| Model                    | Preprocessing     | Test RMSE | Test R²  |
+|--------------------------|-------------------|-----------|----------|
+| Ridge Regression         | PCA               | 3.78      | 0.821    |
+| Lasso Regression         | PCA               | 3.81      | 0.817    |
+| Support Vector Regression| PCA               | 3.94      | 0.805    |
+| Gradient Boosting        | PCA               | 3.85      | 0.814    |
+| Random Forest            | PCA               | 3.93      | 0.806    |
+| XGBoost                  | PCA               | 3.87      | 0.812    |
+| Linear Regression        | VarianceThreshold | 2.83      | 0.899    |
+| Ridge Regression         | VarianceThreshold | 2.83      | 0.899    |
+| Lasso Regression         | VarianceThreshold | 2.89      | 0.895    |
+| Support Vector Regression| VarianceThreshold | 3.29      | 0.864    |
+| Gradient Boosting        | VarianceThreshold | 2.83      | 0.899    |
+| Random Forest            | VarianceThreshold | 3.05      | 0.883    |
+| XGBoost                  | VarianceThreshold | 2.83      | 0.899    |
+| Linear Regression        | VT + PCA          | 3.78      | 0.821    |
+| Ridge Regression         | VT + PCA          | 3.78      | 0.821    |
+| Lasso Regression         | VT + PCA          | 3.81      | 0.817    |
+| Support Vector Regression| VT + PCA          | 3.94      | 0.805    |
+| Gradient Boosting        | VT + PCA          | 3.89      | 0.810    |
+| Random Forest            | VT + PCA          | 3.94      | 0.805    |
+| XGBoost                  | VT + PCA          | 3.90      | 0.809    |
+
+![Scatterplot of Actual vs Predicted values](USS_general_daily_wait_time_prediction/evaluation_metrics/scatterplot_actual_vs_predicted_2017_2025.png)  
+**Figure 1:** Scatterplot of Actual vs Predicted values
+
+![Top 15 Feature Importance](USS_general_daily_wait_time_prediction/evaluation_metrics/top_features_plot_2017_2025.png)  
+**Figure 2:** Top 15 Feature Importance weightage
+
+---
+
+## Conclusion & Future Work
+- **Gradient Boosting** proved to be the most effective model out of all variations tested.
+- PCA and Variance Threshold **did not enhance performance**; they may have removed predictive signals.
+- Future work can include using real world data from 2017 to 2023, and utilise a a full real-world labelled dataset to retrain model and evaluate once more.
+
+### Key Insights
+- Final Gradient Boosting showed the strongest performance with the following metrics(**RMSE: 2.48**, **R²: 0.915**).
+- **Lag features** (wait times from previous 1–3 days) were the most predictive as shown from feature importance chart.
+- Weather and event data had **lower feature importance** as compared to time-series features, but still played a part in determining wait times nonetheless.
+- Demand for attractions is highly **time-sensitive**, indicating a need for robust, accurate and frequent updates in forecasting systems to continuously predict wait times accurately.
+
+### Business Impact
+- Investing in accurate, high-frequency wait time prediction systems helps prevent **operational blind spots** and avoids **snowballing inaccuracies** from outdated data. This  ensures **continuity in predictive accuracy for rides**, ultimately enhancing overall guest experience with accurate information and operational efficiency at scale.
+- Enhances **staffing and resource allocation** with accurate daily demand forecasts.
+- Supports **ride-level and intraday wait time predictions** for real-time operations.
+- Can be integrated with **workforce optimization tools**, creating a robust demand + resource allocation pipeline to dynamically reduce wait times and manage manpower requirements.
+- As a result of good resource allocation and efficiency in wait times, guest experience can thus be enhanced and lead to guests having a positive experience at USS, encouraging revisiting or publishing of good online reviews.
+- Framework can be extended to predict other metrics such as **attendance**, **F&B demand**, or **retail sales**.
+
+### Next Steps
+- Explore deep learning (LSTM, Transformers) for temporal dynamics. This will require even more data collection given the nature of deep learning.
+- Extend to forecasting **attendance**, **individual ride wait times** and other demand-related targeted variables to build Prediction Models using a similar methodology.
+- Developing the aforementioned Pipeline or Integrating demand prediction model into existing **staffing and operations tools**.
+
+## References
+<a id="1">[1]</a> data.gov.sg. (n.d.). Retrieved from https://data.gov.sg/
+
+<a id="2">[2]</a> Meteorological Service Singapore. (n.d.). Retrieved from https://www.weather.gov.sg/home/
+
+<a id="3">[3]</a> Singapore Grand Prix. (2024). 15th Edition of the Formula 1 Singapore Grand Prix. Retrieved from https://singaporegp.sg/en/news/2024/15th-edition-of-the-formula-1/
+
+<a id="4">[4]</a> The Straits Times. (2024). Top-tier concerts helped draw over a million visitors to Sports Hub in first 3 months of 2024. Retrieved from https://www.straitstimes.com/singapore/consumer/top-tier-concerts-helped-draw-over-a-million-visitors-to-sports-hub-in-first-3-months-of-2024
+
+<a id="5">[5]</a> Channel News Asia. (2024). Taylor Swift, Coldplay concerts in Singapore boosted economy. Retrieved from https://www.channelnewsasia.com/singapore/taylor-swift-coldplay-concerts-singapore-economy-mas-4292951
+
+<a id="6">[6]</a> Wikipedia. (n.d.). Retrieved from https://en.wikipedia.org/wiki/Main_Page
+
+<a id="7">[7]</a> Visit Singapore. (n.d.). Retrieved from https://www.visitsingapore.com/whats-happening/all-happenings/
+
+<a id="8">[8]</a> The Straits Times. (2024). Strong slate of MICE events around Singapore Grand Prix period. Retrieved from https://www.straitstimes.com/singapore/strong-slate-of-mice-events-around-singapore-grand-prix-period-despite-expected-fall-in-race-attendance?utm_source=chatgpt.com
+
+<a id="9">[9]</a> Ministry of Education Singapore. (2022). School Terms and Holidays for 2023. Retrieved from https://www.moe.gov.sg/news/press-releases/20221019-school-terms-and-holidays-for-2023
+
+<a id="10">[10]</a> data.gov.sg. (n.d.). Public Holidays Dataset. Retrieved from https://data.gov.sg/datasets?query=public+holiday&page=1&resultId=691
+
+<a id="11">[11]</a> Thrill Data. (n.d.). Universal Studios Singapore Wait Times. Retrieved from https://www.thrill-data.com/waits/park/unit/universal-studios-singapore/
+
+<a id="12">[12]</a> Caiola, G., & Reiter, J. P. (2010). Random forests for generating partially synthetic, categorical data. *Trans. Data Priv.*, 3(1), 27–42. Retrieved from https://citeseerx.ist.psu.edu/document?repid=rep1&type=pdf&doi=069e26205b9dbdc82c5ab31721b0a03f325294db

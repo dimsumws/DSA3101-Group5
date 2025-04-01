@@ -17,7 +17,6 @@ from datetime import datetime
 from math import sqrt
 import os
 import joblib
-from faker import Faker
 import matplotlib.pyplot as plt
 
 wait_times_df = pd.read_csv("../../../data/uss_wait_times/augmented_wait_time_data/2017_to_2025_synthetic_wait_times_final.csv")
@@ -97,18 +96,10 @@ print(X.columns.tolist())
 
 tfidf_vectorizer = preprocessor.named_transformers_['cat'].named_steps['tfidf']
 joblib.dump(tfidf_vectorizer, '../models/tfidf_vectorizer.pkl')
-print("✅ Saved tfidf_vectorizer.pkl to ../models/")
 
-# Print merged dataset shape and post-merge checks
-print(f"Merged dataset shape: {df.shape}")
-print(f"Processed feature shape: {X_processed.shape}")
 X_train, X_test, y_train, y_test = train_test_split(
     X_processed, y, test_size=0.2, random_state=42
 )
-
-# Print train/test split shapes
-print(f"X_train shape: {X_train.shape}, X_test shape: {X_test.shape}")
-print(f"y_train shape: {y_train.shape}, y_test shape: {y_test.shape}")
 
 # Apply Variance Threshold
 selector = VarianceThreshold(threshold=0.01)
@@ -167,7 +158,6 @@ scenarios = {
 final_results = {}
 
 for scenario_name, (train_set, test_set) in scenarios.items():
-    print(f"\n=== Scenario: {scenario_name} ===")
     for name, mp in model_params.items():
         print(f"Tuning {name}...")
         if mp['params']:
@@ -199,8 +189,8 @@ for scenario_name, (train_set, test_set) in scenarios.items():
 # Print results
 for model_scenario, metrics in final_results.items():
     print(f"{model_scenario}:")
-    print(f"  Train RMSE: {metrics['Train RMSE']:.2f}")
-    print(f"  Train R²:   {metrics['Train R2']:.3f}")
+    #print(f"  Train RMSE: {metrics['Train RMSE']:.2f}")
+    #print(f"  Train R²:   {metrics['Train R2']:.3f}")
     print(f"  Test RMSE:  {metrics['Test RMSE']:.2f}")
     print(f"  Test R²:    {metrics['Test R2']:.3f}")
     print(f"  Best Params: {metrics['Best Params']}\n")
