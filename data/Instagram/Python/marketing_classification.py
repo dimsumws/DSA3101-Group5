@@ -18,7 +18,7 @@ def is_influencer(caption):
     return any(word in caption for word in influencer_key_words)
 
 def is_halloween(caption):
-    halloween_keywords = ["halloween", "spooky", "pumpkin", "costume", "hhn", "halloweenhorrornights", "usshhn", "haunted"]
+    halloween_keywords = ["halloween", "spooky", "pumpkin", "costume", "hhn", "halloweenhorrornights", "usshhn", "haunted", "terror"]
     return any(word in caption for word in halloween_keywords)
 
 def is_festive(caption):
@@ -30,7 +30,7 @@ def is_deals_promotions(caption):
     return any(word in caption for word in deals_keywords)
 
 def is_minion_promotion(caption):
-    minion_keywords = ["minion", "despicable me"]
+    minion_keywords = ["minion", "despicable me", "despicable"]
     return any(word in caption for word in minion_keywords)
 
 def attraction_event_based(caption):
