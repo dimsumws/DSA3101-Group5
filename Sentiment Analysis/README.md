@@ -95,7 +95,7 @@ The park can utilise the existing USS app to adopt features such as:
 
 
 ### References:
-Virtual Queues | Walt Disney World Resort. (n.d.). https://disneyworld.disney.go.com/guest-services/virtual-queue/
-IoT in hospitality: How hotels and their guests benefit from these solutions. (n.d.). https://www.cogniteq.com/blog/iot-hospitality-how-hotels-and-their-guests-benefit-these-solutions 
-Images for USS application.
-The value of getting personalization right—or wrong—is multiplying. (2021, November 12). McKinsey & Company. https://www.mckinsey.com/capabilities/growth-marketing-and-sales/our-insights/the-value-of-getting-personalization-right-or-wrong-is-multiplying
+* Virtual Queues | Walt Disney World Resort. (n.d.). https://disneyworld.disney.go.com/guest-services/virtual-queue/
+* IoT in hospitality: How hotels and their guests benefit from these solutions. (n.d.). https://www.cogniteq.com/blog/iot-hospitality-how-hotels-and-their-guests-benefit-these-solutions 
+* Images from the USS application.
+* The value of getting personalization right—or wrong—is multiplying. (2021, November 12). McKinsey & Company. https://www.mckinsey.com/capabilities/growth-marketing-and-sales/our-insights/the-value-of-getting-personalization-right-or-wrong-is-multiplying
