@@ -57,13 +57,27 @@ This module aims to dynamically allocate staff within Universal Studios Singapor
 - **Budget-Conscious Resource Allocation:**
     Helps managers allocate available workforce efficiently, within operational constraints.
 
+## Limitations
+
+- **Lack of Model Evaluation:**
+      Currently, the optimiser has not been quantitatively evaluated due to the absence of ground-truth staffing data, thus its performance cannot be determined on unseen data.
+
+- **Generalising Wait Times & Demand:**
+    The model uses the average wait times for the entire park, which may not be representative for each area (some rides/attractions are far more popular than others). The model allocates the total staff needed for a specific time instead of allocating to specific areas in the park and thus, the user would still need to manually decide the number of staff to allocate to each area.
+
+- **Allocation Solely Based on Wait Time Forecast:**
+    The model does not take into account other factors that may affect demand such as weather. Thus, the allocation done by the model may not be fully reflective of the actual demand of staff required.
+
+- **Model Focused Solely on Staff Allocation:**
+    The model only optimises the allocation of staff hourly and does not optimise the allocation of other essential resources for the park. While staffing is a significant aspect that should be optimised for efficient budgeting, optimising the allocation of other resources can have a significant impact on the budgeting. 
+
 ## Future improvements
 
-- **Model Evaluation:**
-    Currently, the optimiser has not been quantitatively evaluated due to the absence of ground-truth staffing data. Future work can incorporate actual staff logs and operational KPIs (e.g. queue satisfaction, ride throughput) to validate and improve the model.
+- **Incorporation of staffing data:**
+    Future work can incorporate actual staff logs and operational KPIs (e.g. queue satisfaction, ride throughput) to validate and improve the model.
 
 - **Incorporation of More Features:**
-    Including weather data, holiday schedules, and marketing campaigns could further improve forecast accuracy.
+    Including weather data, holiday schedules, and marketing campaigns could further improve forecast accuracy. Furthermore, the model could be generalised to also optimise the allocation of other park resources beyond staffing.
 
 - **Multi-Objective Optimisation:**
     Introduce other goals such as staff fatigue reduction or ride-specific allocation for more granularity.
