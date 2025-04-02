@@ -86,7 +86,7 @@ The park can utilise the existing USS app to adopt features such as:
 * Virtual queueing system
 * Guest location tracking and suggestions. This allows for the park to identify overcrowded areas and redirect visitors with notifications (eg “Transformers currently have low wait times”)
 * Personalized advertisements (eg discounts for guests near restaurants during non-peak hours to encourage staggering of meal times)
-* Dissemination information and navigation (eg “The UV index is now 3-5, it is recommended that you apply sunscreen”/ “The chance of raining is 67%, the nearest shelter is at …”)
+* Dissemination information and navigation (eg “The UV index is now 3-5, it is recommended that you apply sunscreen”/ “The chance of raining is 67%, the nearest shelter is at …”) (See prototype below)
 
 
 ![USS prototype](https://github.com/user-attachments/assets/c75aa543-0778-4df1-b3e5-f9bc34e08bd4)
