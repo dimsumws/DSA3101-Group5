@@ -25,6 +25,6 @@ print(df.head())
 
 # Step 4: Save new CSV file in data directory
 
-output_folder = os.path.join(os.path.dirname(__file__), "..", "data", "clean data")
+output_folder = os.path.join(os.path.dirname(__file__), "..", "cleaned_data_2022_2025")
 output_path = os.path.join(output_folder, "cleaned_2024_wait_times.csv")
 df.to_csv(output_path, index=False)
