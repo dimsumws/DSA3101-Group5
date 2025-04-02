@@ -10,7 +10,9 @@ The date is kept in the folder **datasets** and the **code_solutions** folder co
 
 **daily_school_holidays_combined_updated.csv** is a csv file containing for each day from 2016 to 2025 in a DD/MM/YYYY format, it will have a Flag (1 for Being a school/public holiday for students and 0 otherwise). It has a third column which states which holiday that specific date is if it does have a "1" flag. Do note that *daily_school_holidays_combined.csv* is an intermediate subset of **daily_school_holidays_combined_updated.csv**
 
-**add_2016_to_2018_hols.csv** is a python script to manually add from a nested list of school holidays and append it to the **daily_school_holidays_combined.csv** for the years 2016 to 2018 as they were not provided by the MOE website and hence are not able to be scraped with **scrape_moe_holiday.py**.
+**add_2016_to_2018_hols.csv** is a python script to manually add from a nested list of school holidays and append it to the *daily_school_holidays_combined.csv* for the years 2016 to 2018 as they were not provided by the MOE website and hence are not able to be scraped with **scrape_moe_holiday.py**.
+
+**2025_daily_school_holidays.csv** is subset of *daily_school_holidays_combined_updated.csv* but only for the dates of 2025 after February 23 as data was trained till 2025 February only.
 
 ## Data Sources
 The data for Public Holidays was obtained from Ministry of Manpower (MOM), [SOURCE](https://data.gov.sg/collections/691/view).

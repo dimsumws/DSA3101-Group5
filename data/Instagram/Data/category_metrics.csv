@@ -1,0 +1,9 @@
+category,post_count,avg_likes,avg_comments,avg_sentiment,avg_engagement_score
+family_friendly,45,866.93,3.8,0.08,878.73
+high_value,24,2857.54,55.46,0.11,2973.97
+influencer,40,1002.38,28.22,0.02,1059.91
+halloween,97,1692.31,19.36,0.05,1733.29
+festive,52,400.02,1.17,0.04,404.26
+is_minion,66,1423.24,6.35,0.06,1439.17
+deals_promotions,120,922.66,12.35,0.07,950.88
+attraction_event,26,1162.5,7.85,0.12,1184.14
