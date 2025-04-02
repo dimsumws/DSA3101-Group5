@@ -21,8 +21,8 @@ from sklearn.feature_extraction.text import CountVectorizer
 
 
 # Import Google Reviews and Trip Advisor data
-file_path_1 = "../data/google_reviews/google reviews cleaned df_text.xlsx"
-file_path_2 = "../data/TripAdvisor_reviews/raw_data/tripadvisor.csv"
+file_path_1 = "data/google_reviews/google reviews cleaned df_text.xlsx"
+file_path_2 = "data/TripAdvisor_reviews/raw_data/tripadvisor.csv"
 df1 = pd.read_excel(file_path_1)
 df2 = pd.read_csv(file_path_2)
 
@@ -93,8 +93,8 @@ word_frequencies = word_counts.sum().sort_values(ascending=False)
 
 # Get the top N unigrams and bigrams
 top_n = 10  # Change this number as needed
-print("Most Common Words and Phrases:")
-print(word_frequencies.head(top_n))
+#print("Most Common Words and Phrases:")
+#print(word_frequencies.head(top_n))
 
 # Manually input high-risk keywords
 high_risk_keywords = ['accident', 'injury', 'unsafe', 'dangerous', 'broken', 'malfunction', 'waste',
@@ -284,7 +284,7 @@ def process_guest_data(new_data, type):
 from langdetect import detect
 
 rating = input("How satisfied is your experience at USS so far? On a scale of 1-5: ")
-feedback_text = input("What seems to be the issue you're facing?: ")
+feedback_text = input("What seems to be the issue you're facing? (Give at least 7 words): ")
 language = detect(feedback_text)
 
 raw_data = {
