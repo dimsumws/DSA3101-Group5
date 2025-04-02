@@ -8,10 +8,10 @@ As part of Business Question 9, we aimed to build a predictive model using histo
 
 ## Data
 ### Google Reviews
-Review data from USS Google reviews using web scrapping using Apify. The most recent 5000 reviews were retreived and is stored in ** `data/google_reviews/googlescrap5000` **.
+Review data from USS Google reviews using web scrapping using Apify. The most recent 5000 reviews were retreived and is stored in `data/google_reviews/googlescrap5000`.
 
 ### Trip Advisor Reviews
-Review Data from USS Trip Advisor reviews using web scrapping. The data is stored in ** `data/TripAdvisor_reviews/tripadvisor.csv`** .
+Review Data from USS Trip Advisor reviews using web scrapping. The data is stored in `data/TripAdvisor_reviews/tripadvisor.csv`.
 
 Both datasets will be cleaned and subsequently merged to become a combined reviews dataset with consistent features.
 
