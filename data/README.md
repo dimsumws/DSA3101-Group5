@@ -9,11 +9,11 @@
         - **employment_industry.csv**: Employment changes statistics across various industries from *1991 to 2024*.
         - **median_income.csv**: Median Income among Singaporeans before and after CPF from *2001 to 2023*.
     - **`Python File`** 
-        -**accessible_income.py**: python script to retrieve **accessible_income.csv** from public data.gov.sg API.
-        -**annual_unemployment.py**: python script to retrieve **annual_unemployment.csv** from public data.gov.sg API.
-        -**cpi.py**: python script to retrieve **cpi.csv** from public data.gov.sg API and code for applying data transformation to raw data.
-        -**employment_industry.py**: python script to retrieve **unemployment.csv** from public data.gov.sg API and code for applying data transformation to raw data.
-        -**median_income.py**: python script to retrieve **median_income.csv** from public data.gov.sg API.
+        - **accessible_income.py**: python script to retrieve **accessible_income.csv** from public data.gov.sg API.
+        - **annual_unemployment.py**: python script to retrieve **annual_unemployment.csv** from public data.gov.sg API.
+        - **cpi.py**: python script to retrieve **cpi.csv** from public data.gov.sg API and code for applying data transformation to raw data.
+        - **employment_industry.py**: python script to retrieve **unemployment.csv** from public data.gov.sg API and code for applying data transformation to raw data.
+        - **median_income.py**: python script to retrieve **median_income.csv** from public data.gov.sg API.
     - **Data Source**: 
         1. [data.gov.sg](https://data.gov.sg/)
 
@@ -21,16 +21,16 @@
 
 **events**: information about key events in Singapore, mainly nationwide events, public holidays and school holidays. 
 - Contains two subfolders **`EventData`** and **`Holidays`**
-    -**`EventData`** 
+    - **`EventData`** 
         - **`supplementary_event_data_2016_2025.csv`**: Contains row of daily dates, with boolean flag to determine if corresponding data has an ongoing event.
         - **`2025_remainder_supplementary_event.csv`**: Similar to previously mentioned file but for remainding days of 2025 (March to December of 2025).
-    -**`Holidays`** 
-        -**`datasets`**
+    - **`Holidays`** 
+        - **`datasets`**
             - **`2025_daily_school_holidays.csv`**: Daily data for 2025 with boolean flags if corresponding days are school holidays, has column for name of respective school holiday as well.
             - **`daily_school_holidays_combined_updated.csv`**: Similar to *2025_daily_school_holidays.csv*, but for years 2016 to 2025.
             - **`final_merged_PH_2020_2025.csv`**: List of Public Holiday data from years 2020 to 2025 stored in csv file.
             - **`school_holidays_combined.csv`**: List of School Holiday data from years 2019 to 2025 stored in csv file.
-        **`code_solutions`**
+        - **`code_solutions`**
             - **`add_2016_to_2018_hol.py`**: Python script to add supplementary school holiday data from 2016 to 2018, and process *school_holidays_combined.csv* into `daily_school_holidays_combined_updated.csv`
             - **`scrape_moe_holiday.py`**: Python Script to scrape MOE Holiday data from 2019 to 2025 from Official MOE website and store in *school_holidays_combined.csv*
     - **Data Source**: 
@@ -41,7 +41,7 @@
 ---
 
 **google_reviews**: reviews on Universal Studios Singapore, scraped from Google Reviews.
-    -**googlereviewcleaning.ipynb**: Python Notebook for performing data transformation to `googlereviews5000.xlsx` into `google reviews cleaned df_no_text.xlsx` and `google reviews cleaned df_text.xlsx`
+    - **googlereviewcleaning.ipynb**: Python Notebook for performing data transformation to `googlereviews5000.xlsx` into `google reviews cleaned df_no_text.xlsx` and `google reviews cleaned df_text.xlsx`
 
 ---
 
