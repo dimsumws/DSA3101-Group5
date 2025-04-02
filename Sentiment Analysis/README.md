@@ -66,6 +66,10 @@ Now, we consider existing solutions that are in place in the tourism industry. F
 
 ### Current limitations:
 
+Before presenting our recommendations, we believe it is vital to first highlight the shortcomings of IoT solutions at USS, specifically the USS application. Currently, the USS application lacks in terms of information disseminated to the guests. The application currently only shows the rough location of their rides 
+
+
+![003bb326-94cb-4542-8a80-b8c854feb50b](https://github.com/user-attachments/assets/92eebe20-36b4-4e69-8e5b-82afba8f3737)
 
 
 ### Insights and Recommendations:
