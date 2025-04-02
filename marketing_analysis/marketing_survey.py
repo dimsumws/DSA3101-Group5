@@ -51,7 +51,7 @@ class SurveyAnalyser:
 
     def frequency_distribution(self):
         """Returns visit frequency distribution."""
-        frequency_distribution = self.survey_data["visit_freq"].value_counts()
+        frequency_distribution = self.survey_data["frequency"].value_counts()
         save_table_as_image(frequency_distribution, f"{base_dir}/freq_dist.png")
 
     def spender_distribution(self):
@@ -73,25 +73,7 @@ class SurveyAnalyser:
         for i in range(6, 14):
             d[self.survey_visit_reasons.columns[i]] = self.survey_visit_reasons.iloc[:, i].sum()
         df = pd.DataFrame(sorted(d.items(), key=lambda x: -x[1]), columns=['Visit Reason', 'Count'])
-        save_table_as_image(df, f"{base_dir}visit_reasons_table.png")
-
-    # def plot_top_reasons(self):
-    #     """Visualises top visit reasons."""
-    #     df = self.top_visit_reasons()
-    #     ax = df.plot(kind='bar', x='Visit Reason', y='Count', legend=False)
-    #     plt.title("Top Visit Reasons")
-    #     plt.xticks(rotation=45, ha='right')
-    #     plt.savefig(f"{base_dir}/top_visit_reasons.png", bbox_inches='tight', dpi=300)
-    #     plt.close()
-
-    # def plot_top_mkting_pref(self):
-    #     """Visualises top marketing content preferences."""
-    #     df = self.top_mkting_pref()
-    #     ax = df.plot(kind='bar', x='Marketing Content', y='Count', legend=False)
-    #     plt.title("Top Marketing Content Preferences")
-    #     plt.xticks(rotation=45, ha='right')
-    #     plt.savefig(f"{base_dir}/top_mkting_pref.png", bbox_inches='tight', dpi=300)
-    #     plt.close()
+        save_table_as_image(df, f"{base_dir}/visit_reasons_table.png")
 
     def visualise_preferences_by_freq(self):
         """Plots marketing content preferences and visit reasons by visitor frequency."""
@@ -176,7 +158,9 @@ class SurveyAnalyser:
 if __name__ == '__main__':
     survey_data = pd.read_csv("data/survey_responses/cleaned_survey_responses.csv")
     analyser = SurveyAnalyser(survey_data)
-    # print(analyser.survey_data)
-    # print(analyser.survey_mkting_pref)
-    # print(analyser.survey_visit_reasons)
+    analyser.frequency_distribution()
+    analyser.spender_distribution()
+    analyser.top_mkting_pref()
+    analyser.top_visit_reasons()
+    analyser.visualise_preferences_by_freq()
     analyser.visualise_preferences_by_spending()
