@@ -109,6 +109,22 @@
 
 ---
 
+**`singapore_tourism_data`**: Singapore Tourism related data, containing headcounts and demographic breakdowns of tourism into Singapore
+- Contains two subfolders, **`Final`** and **`Python File`**
+    - **`Python File`**
+        - **`generate_syn_attn_data.py`**: Python script to generate synthetic daily attendance counts at USS for years 2017 to 2025 based on real-world data.
+        - **`tourism_age_gender.py`**: Python script to generate **`tourism_age_groups.csv`** and **`tourism_gender.csv`**.
+        - **`tourism.py`**: Python script to generate **`tourism.csv`**.
+    - **`Final`**
+        - **`synthetic_data_daily_attendance`** subfolder
+            - **`synthetic_daily_attendance_2017_2025.csv`**: Synthetic daily attendance at USS data based on real-world daily data.
+        - **`tourism_counts`**
+            - **`tourism_age_groups.csv`**: Age Groups head counts of tourists coming into Singapore from 2008 to January 2025.
+            - **`tourism_gender.csv`**: Gender head counts of tourists coming into Singapore from 2008 to January 2025. 
+            - **`tourism.csv`**: Monthly head count of tourists from different Regions/Countries coming into Singapore from 1978 to January 2025.
+
+---
+
 **survey_responses**: survey responses obtained from our survey  
 - **`survey_responses.csv`**: Raw data of survey responses
 - **`survey_cleaning.py`**: Python script to perform data cleaning and responses 
