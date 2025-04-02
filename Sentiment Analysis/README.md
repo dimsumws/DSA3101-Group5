@@ -2,7 +2,7 @@
 
 ## Process:
 
-The goal is to do a sentiment analysis on the reviews from TripAdvisor regarding Universal Studios Singapore (USS). We hope to identify what guests liked and identify pain points that can be potentially tackled by IoT solutions.
+The goal is to do a sentiment analysis on the reviews from TripAdvisor regarding Universal Studios Singapore (USS) to identify guests' common praises and pain points that can be potentially tackled by IoT solutions.
 
 ### Data Cleaning:
 
