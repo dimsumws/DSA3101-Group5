@@ -1,8 +1,8 @@
-# Sentiment Analysis on Tripadvisor Review data.
+# IoT Data Integration for Experience Optimization
 
-## Goal:
+## Process:
 
-The goal is to do a sentiment analysis on the reviews from TripAdvisor regarding Universal Studios Singapore (USS). We hope to identify what guests liked and identify pain points that can be potentially tackled.
+The goal is to do a sentiment analysis on the reviews from TripAdvisor regarding Universal Studios Singapore (USS). We hope to identify what guests liked and identify pain points that can be potentially tackled by IoT solutions.
 
 ### Data Cleaning:
 
@@ -60,3 +60,17 @@ Finally, the frequent mention of specific ride names highlights that the attract
 
 "Express pass" appears frequently in negative reviews, suggesting that the service did not meet customer expectations. This likely reflects situations where guests felt the Express Pass did not significantly reduce wait times as anticipated. Additionally, given the higher cost of these passes, customers may have had high expectations for the service, only to be disappointed by the actual experience. This is further corroborated by the presence of phrases like "waiting time" and "waste of money", which indicate frustration with the perceived value. This underscores the importance of the queuing experience in determining overall customer satisfaction.
 
+### Competitors analysis:
+
+Now, we consider existing solutions that are in place in the tourism industry. Firstly, Disneyland allows users to queue for attractions and rides virtually on the Disneyland app. (Walt Disney World Resort, n.d.). This is important as it allows guests to enjoy other experiences while queueing, which lowers the perceived time wasted on queues, increasing satisfaction. Next, consider hotels such as the Marriott hotel, which uses internet-connected devices. For example, guests are tracked to ensure they do not enter restricted premises. Also, using their in-house application, the guests can interact with various features in their hotel room, such as climate control. Vitally, guests are also able to see relevant information such as checkout time.
+
+### Current limitations:
+
+
+
+### Insights and Recommendations:
+
+Guest satisfaction is closely tied to the queues, costs and ride experiences. 
+
+### References:
+Virtual Queues | Walt Disney World Resort. (n.d.). https://disneyworld.disney.go.com/guest-services/virtual-queue/
