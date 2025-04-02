@@ -63,9 +63,18 @@ In order to prepare our data for model training, we created the following featur
 - An accurate high-risk detection model can alert USS staff to de-escalate potential incidents which can negatively impact guest satisfaction.
 - Guest experience can be enhanced through receiving swift assistance from USS staff.
 - Frequent high-risk feedback in concentrated areas can prompt USS operations to reallocate more staff to specific locations.
-- The model can be implemented to a live feedback station to gain real-time guest feedback data.
+- The model can be implemented to a live feedback system to gain real-time guest feedback data to prevent further complaints.
 
 ## Part 2: Propose proactive interventions to address potential issues before complaints arise
+Through the analysis of review data, we can devise solutions based on frequent guest complaints and live data feedback.
+
+### Common guest complaints
+1. Long queues
+2. Express pass is too expensive
+3. Waiting time
+
+### Proposed interventions
+refer to junkai one pls write later!
 
 
 
