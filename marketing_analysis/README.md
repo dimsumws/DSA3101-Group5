@@ -30,23 +30,16 @@ After cleaning the dataset, we performed additional transformations to derive me
 - We manually defined a Bag of Words (BoW) to classify captions into different marketing categories.
 - This enabled us to analyse the effectiveness of various marketing strategies based on engagement metrics and identify guest segments based on their interactions with different content types.
 - For example, if posts categorised under `family_friendly` receive high engagement, it su%ggests a segment of guests who are highly interested in family friendly experiences.
+
 #### 2. Comment Volume (`num_comments`)
 - We computed the number of comments for each post to measure engagement levels.
-#### 3. Sentiment Analysis (`sentiment`)
-- Using `VaderSentiment`’s `SentimentIntensityAnalyzer`, we computed the average sentiment score for comments on each post:
-\[
-\text{sentiments} = [\text{analyser.polarity\_scores}(\text{comment})['compound'] \text{ for comment in comments.values()}]
-\]
 
-\[
-\text{average sentiment} = \frac{\sum \text{sentiments}}{\text{len(sentiments)}}
-\]
+#### 3. Sentiment Analysis (`sentiment`)
+- Using `VaderSentiment`’s `SentimentIntensityAnalyzer`, we computed the average sentiment score for comments on each post.
 
 #### 4. Engagement Score (`engagement_score`)
 To quantify overall engagement, we computed **engagement score** for each post using the formula:
-\[
-\text{engagement\_score} = (\alpha \times \text{num\_likes}) + (\beta \times \text{num\_comments}) + (\gamma \times \text{sentiment})
-\]
+![Engagement Score Formula](readme_images/engagement_score_formula.png)
 
 ##### Weighting Factors:
 - $\alpha = 1$: Likes indicate passive interest, so they receive the lowest weight.
@@ -139,7 +132,6 @@ The dashboard includes the following key features:
 2. **Comparative Line Chart**: A line chart with a dropdown menu that allows users to compare different metrics (e.g., Likes, Comments, Sentiment, Engagement Score) across various categories (e.g., Family-Friendly, High Value, Influencer, Festive, Is Minion, Deals Promotion, Attraction Event) over time.
 
 ### Data Interpretation
-
 
 ![Dashboard Overview](visualisations/dashboard_overview.png)
 
