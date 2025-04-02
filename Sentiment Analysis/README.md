@@ -25,9 +25,6 @@ The aim is to clean and standardise textual data for analysis. We applied the fo
 4. Lemmatization.
     - Converts words to their base form to normalize the variations of the same word. This reduces vocabulary size and improves model generalisation.
   
-### Exploratory Data Analysis:
-
-Looking at the distribution of the guests' ratings, we get a preliminary idea of how the overall experience is perceived. We can see from the bar chart that the vast majority of guests rated their experience at least a 4 out of 5. We can then suspect that sentiment analysis will also reveal to be largely positive.  
 
 ## Sentiment Analysis
 
