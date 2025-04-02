@@ -62,7 +62,7 @@ Finally, the frequent mention of specific ride names highlights that the attract
 
 ### Competitors analysis:
 
-Now, we consider existing solutions that are in place in the tourism industry. Firstly, Disneyland allows users to queue for attractions and rides virtually on the Disneyland app. (Walt Disney World Resort, n.d.). This is important as it allows guests to enjoy other experiences while queueing, which lowers the perceived time wasted on queues, increasing satisfaction. Next, consider hotels such as the Marriott hotel, which uses internet-connected devices. For example, guests are tracked to ensure they do not enter restricted premises. Also, using their in-house application, the guests can interact with various features in their hotel room, such as climate control. Vitally, guests are also able to see relevant information such as checkout time.
+Now, we consider existing solutions that are in place in the tourism industry. Firstly, Disneyland allows users to queue for attractions and rides virtually on the Disneyland app. (Walt Disney World Resort, n.d.). This is important as it allows guests to enjoy other experiences while queueing, which lowers the perceived time wasted on queues, increasing satisfaction. Next, consider hotels such as the Marriott hotel, which uses internet-connected devices. For example, guests are tracked to ensure they do not enter restricted premises. (cogniteq, n.d.) Also, using their in-house application, the guests can interact with various features in their hotel room, such as climate control. Vitally, guests are also able to see relevant information such as checkout time. 
 
 ### Current limitations:
 
@@ -77,7 +77,7 @@ Secondly, as seen from the image below, while the application shows the estimate
 
 ### Business impact:
 
-Guest satisfaction is closely tied to the queues, costs and ride experiences. According to queue theory, poor queue management could cost businesses due to customers’ perceived trade-offs. As customers get frustrated, they are less likely to spend and return, potentially resulting in a loss of revenue for USS. Hence, to retain loyalty and increase spending, the park can consider adopting strategies to make queues more bearable and forgettable. (Zhou & Soman, 2003) 
+Guest satisfaction is closely tied to the queues, costs and ride experiences. According to queue theory, poor queue management could cost businesses due to customers’ perceived trade-offs. As customers get frustrated, they are less likely to spend and return, potentially resulting in a loss of revenue for USS. Hence, to retain loyalty and increase spending, the park can consider adopting strategies to make queues more bearable and forgettable. (Zhou & Soman, 2003) Additionally, businesses that adopt personalized advertising have seen consumers increase in consumer spending. (McKinsey & Company, 2021)
 
 ### Recommendations:
 
@@ -85,6 +85,7 @@ The park can utilise the existing USS app to adopt features such as:
 * Current Queue progress
 * Virtual queueing system
 * Guest location tracking and suggestions. This allows for the park to identify overcrowded areas and redirect visitors with notifications (eg “Transformers currently have low wait times”)
+* Personalized advertisements (eg discounts for guests near restaurants during non-peak hours to encourage staggering of meal times)
 * Dissemination information and navigation (eg “The UV index is now 3-5, it is recommended that you apply sunscreen”/ “The chance of raining is 67%, the nearest shelter is at …”)
 
 
@@ -92,7 +93,9 @@ The park can utilise the existing USS app to adopt features such as:
 
 
 
+
 ### References:
 Virtual Queues | Walt Disney World Resort. (n.d.). https://disneyworld.disney.go.com/guest-services/virtual-queue/
-
-
+IoT in hospitality: How hotels and their guests benefit from these solutions. (n.d.). https://www.cogniteq.com/blog/iot-hospitality-how-hotels-and-their-guests-benefit-these-solutions 
+Images for USS application.
+The value of getting personalization right—or wrong—is multiplying. (2021, November 12). McKinsey & Company. https://www.mckinsey.com/capabilities/growth-marketing-and-sales/our-insights/the-value-of-getting-personalization-right-or-wrong-is-multiplying
