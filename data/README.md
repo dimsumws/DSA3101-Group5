@@ -72,7 +72,9 @@
         - **`extract_ig_post.py`**: Script to extract data from @universalstudiossingapore's feed posts.
         - **`extract_ig_story.py`**: Script to extract data from @universalstudiossingapore's story highlights.
         - **`marketing_classification.py`**: Script to classify posts into specific marketing categories.
-    
+
+    - **Data Source**: 
+        1. [Instagram](https://www.instagram.com/universalstudiossingapore/)
 ---
 
 **`meteorological`**: information about the weather in Singapore, together with data collection and cleaning code.
