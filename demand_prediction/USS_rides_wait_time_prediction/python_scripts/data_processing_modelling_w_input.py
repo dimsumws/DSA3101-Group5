@@ -225,7 +225,7 @@ def train_ride_model(ride_name: str):
 
     plt.xlabel("Actual Wait Time (min)")
     plt.ylabel("Predicted Wait Time (min)")
-    plt.title(f"{ride_nameq} Ride Model\nRMSE={final_rmse:.2f}, R²={final_r2:.3f}")
+    plt.title(f"{ride_name} Ride Model\nRMSE={final_rmse:.2f}, R²={final_r2:.3f}")
 
     plt.tight_layout()
     plt.savefig(f"{subfolder}/best_{ride_name}_gb_model.png")
