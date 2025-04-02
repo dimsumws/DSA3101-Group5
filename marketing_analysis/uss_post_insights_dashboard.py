@@ -1,3 +1,11 @@
+"""
+Dash web application for visualizing the engagement of marketing strategies over time.
+
+This application displays category metrics and allows users to select specific marketing 
+categories and engagement metrics to visualize trends in engagement scores, likes, comments, 
+and sentiment over time.
+"""
+
 import dash
 from dash import dcc, html, dash_table, callback, Output, Input
 import os
@@ -67,6 +75,21 @@ app.layout = html.Div([
      Input('metric-dropdown', 'value')]
 )
 def update_graph(selected_categories, selected_metric):
+    """
+    Updates the engagement graph based on selected marketing categories and metrics.
+
+    This function is triggered when the user selects different categories or metrics from the 
+    dropdown menus. It filters the dataset based on the selected categories and computes 
+    the average engagement metrics over time.
+
+    Parameters:
+        selected_categories (list): A list of selected marketing categories.
+        selected_metric (str): The selected engagement metric to visualize.
+
+    Returns:
+        figure: A Plotly figure object representing the engagement over time for the 
+                selected categories and metric.
+    """
     if not selected_categories:
         return px.line(title="No Categories Selected")
 

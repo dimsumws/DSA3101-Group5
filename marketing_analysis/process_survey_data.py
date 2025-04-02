@@ -1,7 +1,20 @@
 import pandas as pd
 
 def mapping(df):
-    # mapping frequencies to rare, moderate, frequent, traveller
+    """
+    Maps visitor frequency and spending categories in the given DataFrame.
+
+    This function transforms the `visit_freq` column into categories such as 'rare', 'moderate', 
+    'frequent', and 'traveller' based on predefined mappings. It also categorizes the top spending 
+    type into 'low spender', 'average spender', or 'high spender' and renames the resulting column 
+    to `spender_type`, which is set as an ordered categorical type.
+
+    Parameters:
+        df (DataFrame): The DataFrame containing visitor data with `visit_freq` and `top_expense` columns.
+
+    Returns:
+        DataFrame: The modified DataFrame with additional columns for frequency and spending category.
+    """
     freq_mapping = {
         '< Once every 3 years': 'rare',
         'Once every 2-3 years': 'rare',
@@ -14,9 +27,6 @@ def mapping(df):
     
     df['frequency'] = df['visit_freq'].replace(freq_mapping) 
 
-    #categorising those who spend most on transport as low spenders; 
-    #those who spend most on f&b as average spenders;
-    #those who spend most on merchandise as high spenders
     spender_mapping = {
         'Transportation': 'low spender',
         'F&B': 'average spender',
@@ -33,6 +43,19 @@ def mapping(df):
 
 
 def create_visit_reason_columns(df):
+    """
+    Creates binary columns for visit reasons based on the provided keywords.
+
+    This function checks the `visit_reason` column for specific keywords related to 
+    various reasons for visiting the theme park. It generates new columns indicating 
+    whether each reason is applicable (1) or not (0) for each visitor.
+
+    Parameters:
+        df (DataFrame): The DataFrame containing visitor data with a `visit_reason` column.
+
+    Returns:
+        DataFrame: The modified DataFrame with new binary columns for each visit reason.
+    """
     reasons = {"attraction": "To experience a specific attraction or ride",
                "event": "To attend a special event or seasonal celebration (e.g., Halloween, Christmas, Exhibitions in collaboration with other franchises)",
                "promotion": "Because of a special promotion or discount",
@@ -49,6 +72,19 @@ def create_visit_reason_columns(df):
 
 
 def create_mkting_content_seen_columns(df):
+    """
+    Creates columns indicating the number of marketing content types seen by visitors.
+
+    This function evaluates the `mkting_content_seen` column and checks for the presence of 
+    various marketing content keywords. It generates new columns that count the occurrences 
+    of each marketing content type.
+
+    Parameters:
+        df (DataFrame): The DataFrame containing visitor data with a `mkting_content_seen` column.
+
+    Returns:
+        DataFrame: The modified DataFrame with new columns for each marketing content type, indicating the count of occurrences.
+    """
     # Mappings where some categories are grouped
     marketing_content = {
         "online_ads": ["Social media ads", "Online banner ads"],  # Grouped together
@@ -72,7 +108,19 @@ def create_mkting_content_seen_columns(df):
 
 
 def create_mkting_content_pref_columns(df):
-    # mappings where some categories are grouped
+    """
+    Creates binary columns indicating the marketing content preferences of visitors.
+
+    This function checks the `mkting_content_pref` column for specific marketing content 
+    keywords and generates new columns indicating whether each content type is preferred (1) 
+    or not preferred (0) for each visitor.
+
+    Parameters:
+        df (DataFrame): The DataFrame containing visitor data with a `mkting_content_pref` column.
+
+    Returns:
+        DataFrame: The modified DataFrame with new binary columns for each marketing content preference.
+    """
     marketing_content = {
         "deals_promotions": "Discounts, special offers, or bundles",
         "attraction_events": "New attractions or event announcements",
