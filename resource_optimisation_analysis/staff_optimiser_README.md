@@ -67,3 +67,9 @@ This module aims to dynamically allocate staff within Universal Studios Singapor
 
 - **Multi-Objective Optimisation:**
     Introduce other goals such as staff fatigue reduction or ride-specific allocation for more granularity.
+
+## Files Referenced
+
+| Script                             | Description                                                  |
+|------------------------------------|--------------------------------------------------------------|
+| `staff_optimiser.py` | optimises hourly staff allocation according to demand            |
