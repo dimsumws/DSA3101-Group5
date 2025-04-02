@@ -52,24 +52,24 @@ To quantify overall engagement, we computed **engagement score** for each post u
 - $\gamma = 50$: Sentiment is crucial as it reflects how people emotionally react to content. A highly positive post with fewer likes may still be impactful, so it is given the highest weight.
 This score allows us to identify which content resonates most with different guest segments, helping refine marketing strategies.
 
-## Survey Data Processing
-
+## Survey Data
+### Survey Data Processing
 We further processed the survey responses from `data/survey_responses/cleaned_survey_responses.csv` to derive useful insights:
 
-### 1. Mapping Visiting Frequencies  
+#### 1. Mapping Visiting Frequencies  
 Visitors were categorised into four segments based on their visiting frequency:  
 - **Rare**: Infrequent visitors  
 - **Moderate**: Occasional visitors  
 - **Frequent**: Regular visitors  
 - **Traveller**: Visitors from outside the local area  
 
-### 2. Spender Categorisation  
+#### 2. Spender Categorisation  
 Visitors were classified into different spending levels based on their highest expense category:  
 - **Low Spenders**: Those who spend the most on transport  
 - **Average Spenders**: Those who spend the most on food & beverage (F&B)  
 - **High Spenders**: Those who spend the most on merchandise  
 
-### 3. Mapping Visit Reasons  
+#### 3. Mapping Visit Reasons  
 Each visitor's reason for visiting was mapped to a predefined category:  
 
 | Reason | Description |
@@ -83,7 +83,7 @@ Each visitor's reason for visiting was mapped to a predefined category:
 | `new_attraction` | To visit a newly opened or recently renovated park/area |
 | `social_media` | Because of a social media post or influencer recommendation |
 
-### 4. Mapping Marketing Content Seen  
+#### 4. Mapping Marketing Content Seen  
 Visitors' exposure to different marketing channels was grouped into broader categories:  
 
 | Category | Included Sources |
@@ -96,7 +96,7 @@ Visitors' exposure to different marketing channels was grouped into broader cate
 | `theme_park_websites` | Theme park websites or blogs |
 | `third_party_promotions` | Promotions or discounts from travel agencies or third-party platforms (e.g., Agoda, Groupon) |
 
-### 5. Mapping Preferred Marketing Content  
+#### 5. Mapping Preferred Marketing Content  
 Visitors' preferred marketing content types were categorized as follows:  
 
 | Category | Description |
@@ -170,18 +170,22 @@ python marketing_analysis/marketing_survey.py
 
 #### Visitor Spending Patters
 ![Spender Distribution](visualisations/spender_dist.png)
-Most visitors are average spenders, follwoed by high spenders, and finally low spenders.
 
-#### Marketing Content Preferences
-![Marketing Preference Table](visualisations/mkting_pref_tablle.png)
-Visitors are most attracted to discounts, bundles, and special offers (deals_promotions), followed by new attraction announcements (attraction_events).
+Most visitors are average spenders, follwoed by high spenders, and finally low spenders.
 
 #### Visitor Frequency Distribution
 ![Frequency Distribution](visualisations/freq_dist.png)
+
 Since most visitors rarely visit, there is an opportunity to explore ways to increase repeat visits. 
+
+#### Marketing Content Preferences
+![Marketing Preference Table](visualisations/mkting_pref_table.png)
+
+Visitors are most attracted to discounts, bundles, and special offers (deals_promotions), followed by new attraction announcements (attraction_events).
 
 #### Visit Reasons and Marketing Preferences by Visitor Frequency 
 ![Preferences and Reasons by Frequency](visualisations/pref_by_freq.png)
+
 Discounts, bundles, and special offers (`deals_promotions`) are the most effective marketing strategy across all visitor segments.
 The most common reason for visiting among rare, traveller, and moderate visitors is to spend time with family and friends (`social`).
 
