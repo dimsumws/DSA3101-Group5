@@ -4,7 +4,7 @@
 SPMF is an open-source data mining library that provides implementations of numerous pattern mining algorithms, including frequent itemset mining, sequential pattern mining, association rule mining, and more. It is implemented in Java and can be used through a command-line interface, Java API, or a graphical user interface.
 
 ## Installation
-* Download the `spmf.jar` file from the download page of spmf
+* Download the `spmf.jar` file from the [download](https://www.philippe-fournier-viger.com/spmf/index.php?link=download.php) page of spmf
 * Install the python wrapper using pip
 ```
 pip install spmf
