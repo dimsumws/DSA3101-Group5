@@ -57,7 +57,7 @@
 **`instagram`**: instagram posts and stories posted by USS, extraction and data cleaning.
 - Contains two subfolders **`Data`** and **`Python`**
     - **`Data`**
-        **`category_metrics.csv`**
+        - **`category_metrics.csv`**
         - **`cleaned_instagram_data.csv`**:
         - **`cleaned_instagram_stories.csv`**:
         - **`uss_ig_classified_sentiment.csv`** 
@@ -108,6 +108,10 @@
 ---
 
 **survey_responses**: survey responses obtained from our survey  
+- **`survey_responses.csv`**: Raw data of survey responses
+- **`survey_cleaning.py`**: Python script to perform data cleaning and responses 
+- **`labels.csv`**: List of Labels for Survey Questions
+- **`cleaned_survey_responses.csv`**: Cleaned version of data responses
 
 ---
 
@@ -116,11 +120,23 @@
 ---
 
 **uss_attraction_details**: details on entities in USS  
+- **`attractions.csv`**: Contains all entities in USS in format: [name, attraction type, zone]
+- **`meetandgreet.csv`**: Contains all show timings in format: [title, show times]
+- **`rides.csv`**: : Contains all rides in USS in format: [ride, type, environment, description]
+- **Data Source**:
+    1. [Resorts World Sentosa](https://www.rwsentosa.com/en/Play/universal-studios-singapore)
 
 ---
 
 
 **uss_ride_wait_times**: wait times for all individual rides in USS scraped from Thrill Data
+- **`Raw Data`** subfolder
+    - Each Individual Ride in USS has a subfolder, with montlhy CSV files containing 5 Minute Interval Wait Time data for corresponding month
+- **`merged_XXX.csv`**: Each Ride's total wait time data across all months into an individaul folder
+- **`merge_csv.py`**: Python script to merge each ride's **`merged_XXX"`** into **`all_ride_wait_times.csv`**
+- **`all_ride_wait_times.csv`**: All rides 5 Minute Interval wait time data from January 2024 to March 2025
+- **Data Source**:
+    1. [Thrill Data](https://www.thrill-data.com/waits/park/unit/universal-studios-singapore/)
 
 ---
 

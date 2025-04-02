@@ -8,7 +8,7 @@ import json
 url = "https://api-open.data.gov.sg/v2/real-time/api/twenty-four-hr-forecast"
 
 # Define date range
-start_date = datetime(2016, 6, 2)
+start_date = datetime(2016, 3, 2)
 end_date = datetime(2025, 2, 22)
 
 # Initialize list to store data

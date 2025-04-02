@@ -149,7 +149,7 @@ if hasattr(model, "feature_importances_"):
     # Save full feature importances to CSV
     full_importance_path = "../evaluation_metrics/full_feature_importance_2017_2025.csv"
     importances.to_csv(full_importance_path, index=False)
-    print(f"\n📁 All feature importances saved to {full_importance_path}\n")
+    print(f"\n All feature importances saved to {full_importance_path}\n")
 
     print(importances.to_string(index=False))
 
