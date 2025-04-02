@@ -4,7 +4,10 @@ This section aims to identify common guest journey paths amongst guests who visi
 
 ## Data and Methodology
 ### Data in this Folder
-This folder includes the following data:    
+This folder includes the following data:  
+**Folder:** `images`
+* Folder containing images used for this README
+
 **Folder:** `spmf`
 * Folder containing the spmf library and application used for sequence mining
 
@@ -53,6 +56,9 @@ Such systems have been implemented in mobile apps theme parks in other countries
 |Includes attraction filters based on attraction type and wait time |Includes filters on attractions based on visitor's interests|Provides recommended itineraries based on common visitor profiles|
 
 USS can hence take inspiration from other theme park mobile applications in personalising the guest experiences by pstreamlining the searching process for the guests. Allowing guests to take control over how they want to navigate the park can create a sense of fulfilment with a more efficient use of time in the park, increasing guest satisfaction and chances of return.
+
+## Crowd Dispersal during Peak Periods
+USS can also consider forms of crowd dispersal in crowded zones via the use of carnival game booths. Such game booths can be placed in the perimeters of high crowd areas to move crowds away from areas of choke point. These game booths also serve as forms of entertainment and engagement to reduce the perceived wait times for other attractions, such as food preparation. At the same time these booths can also generate revenue from the games played, increasing overall revenue while targetting guest satisfaction through the reduction of perceived wait time. USS can utilise the newly opened Ba-Na-Na CaBaNa! and Space Killer to monitor the amount of traction and revenue generated from such carnival games before deciding on the success and further implementation of this approach in other parts of the park.
 
 ## References
 <a id="1">[1]</a> TRF. (2018). It All Started with the Hub and Spoke: An Analysis of Park Forms. Blogspot.com. https://imagineerland.blogspot.com/2018/07/it-all-started-with-hub-and-spoke.html
