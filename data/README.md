@@ -57,21 +57,24 @@
 **`instagram`**: instagram posts and stories posted by USS, extraction and data cleaning.
 - Contains two subfolders **`Data`** and **`Python`**
     - **`Data`**
-        - **`category_metrics.csv`**
-        - **`cleaned_instagram_data.csv`**:
-        - **`cleaned_instagram_stories.csv`**:
-        - **`uss_ig_classified_sentiment.csv`** 
-        - **`uss_ig_classified.csv`**
-        - **`uss_ig_stories.csv`**:
-        - **`uss_ig.csv`**
+        **`category_metrics.csv`**: Aggregated engagement metrics for different marketing categories. 
+        - **`cleaned_instagram_data.csv`**:  A cleaned version of `uss_ig.csv` with improved formatting and consistency.
+        - **`cleaned_instagram_stories.csv`**: A cleaned version of `uss_ig_stories.csv`.
+        - **`uss_ig_classified_sentiment.csv`**:  A further processed version of `uss_ig_classified.csv`, including: `num_comments`, `sentiment`, `engagement_score`.
+        - **`uss_ig_classified.csv`**: An enhanced version of `cleaned_instagram_data.csv`, with additional binary columns indicating whether a post belongs to a specific marketing category.
+        - **`uss_ig_stories.csv`**: Contains raw Instagram highlights (stories) data.
+        - **`uss_ig.csv`**: Contains raw Instagram post data.
         
     - **`Python`**
-        - **`615_import_firefox_session.py`**:
-        - **`clean_ig_post.py`**:
-        - **`comment_engineering.py`**
-        - **`extract_ig_post.py`**:
-        - **`extract_ig_story.py`**:
-        - **`marketing_classification.py`**
+        - **`615_import_firefox_session.py`**: Script to import user's Instagram session from Firefox.
+        - **`clean_ig_post.py`**: Script to clean `uss_ig.csv` and `uss_ig_stories.csv`.
+        - **`comment_engineering.py`**: Processes comments and generates new columns: num_comments, sentiment, and engagement_score.
+        - **`extract_ig_post.py`**: Script to extract data from @universalstudiossingapore's feed posts.
+        - **`extract_ig_story.py`**: Script to extract data from @universalstudiossingapore's story highlights.
+        - **`marketing_classification.py`**: Script to classify posts into specific marketing categories.
+
+    - **Data Source**: 
+        1. [Instagram](https://www.instagram.com/universalstudiossingapore/)
     
 ---
 
@@ -83,25 +86,25 @@
         - **`get_4_day_forecast.py`**: Retrieve 4 Day Forecast Data from March 2016 to February 2025 data.gov.sg public API.
         - **`get_5_min_rainfall.py`**: Retrieve 5 Min Rainfall Data from December 2023 to January 2025 from data.gov.sg public API.
         - **`get_24_hr_daily_forecast.py`**: Retrieve 24 hr Daily Forecast Data from March 2016 to February 2025 data.gov.sg public API.
-        - **`get_avg_windspeed.py`**: Retrieve daily windspeed data from March 2016 to February 2025 using data.gov.sg public API, perform data transformation to find average daily windspeed
-        - **`join_tables_tgt.py`**: Python Script to merge all weather related CSV files together, from 2016 to 2025
+        - **`get_avg_windspeed.py`**: Retrieve daily windspeed data from March 2016 to February 2025 using data.gov.sg public API, perform data transformation to find average daily windspeed.
+        - **`join_tables_tgt.py`**: Python Script to merge all weather related CSV files together, from 2016 to 2025.
         - **`merge_rh.py`**: Retrieve Relative Humidity data from March 2016 to February 2025 using data.gov.sg public API. Perform data transformation to find daily average RH value.
         - **`merge_sentosa_data.py`**: Merge Monthly Sentosa Weather CSV files into one central file. 
     - **`datasets`**
         - **`final_data`**
-            - **`4_day_weather_forecasts.csv`**: 4 Day Weather Forecasts data from 2016 to 2025
-            - **`24_hr_weather_forecast_data.csv`**: 24 Hour Weather Forecast data from 2016 to 2025
-            - **`daily_avg_psi_readings.csv`**: Daily Average PSI Readings data from 2014 to 2025
-            - **`final_augmented_weather_sentosa_data.csv`**: Metoerological Service Singapore Data from 2016 to 2025
-            - **`final_merged_RH_2017_2025.csv`**: Average Relative Humidity data from 2017 to 2025
-            - **`sentosa_avg_windspeed.csv`**: Average Windspeed data from 2017 to 2025
-            - **`sentosa_rainfall_5min_int.csv`**: 5 Minute Interval Sentosa Rainfall data for years 2024 and 2025
-            - **`synthetic_weather_data_2025_cleaned.csv`**: Synthetic daily weather data for rest of 2025 dates
+            - **`4_day_weather_forecasts.csv`**: 4 Day Weather Forecasts data from 2016 to 2025.
+            - **`24_hr_weather_forecast_data.csv`**: 24 Hour Weather Forecast data from 2016 to 2025.
+            - **`daily_avg_psi_readings.csv`**: Daily Average PSI Readings data from 2014 to 2025.
+            - **`final_augmented_weather_sentosa_data.csv`**: Metoerological Service Singapore Data from 2016 to 2025.
+            - **`final_merged_RH_2017_2025.csv`**: Average Relative Humidity data from 2017 to 2025.
+            - **`sentosa_avg_windspeed.csv`**: Average Windspeed data from 2017 to 2025.
+            - **`sentosa_rainfall_5min_int.csv`**: 5 Minute Interval Sentosa Rainfall data for years 2024 and 2025.
+            - **`synthetic_weather_data_2025_cleaned.csv`**: Synthetic daily weather data for rest of 2025 dates.
         - **`raw_data`**
             - **`daily_data_sentosa`**:
-                - **`sentosa_data.zip`**: zip file containing monthly data of Sentosa from MSS
-            - **`Historical24hrPSI.csv`**: 24 Hour Historical PSI Values from data.gov.sg
-    - **Data Sources**
+                - **`sentosa_data.zip`**: zip file containing monthly data of Sentosa from MSS.
+            - **`Historical24hrPSI.csv`**: 24 Hour Historical PSI Values from data.gov.sg.
+    - **Data Sources**:
         1. [data.gov.sg](https://data.gov.sg/)
         2. [Meteorological Service Singapore](https://www.weather.gov.sg/climate-historical-daily/)
 
@@ -115,7 +118,12 @@
 
 ---
 
-**tripadvisor_reviews**: reviews on USS scraped from TripAdvisor  
+**tripadvisor_reviews**: reviews on USS scraped from Tripadvisor  
+- **`DSA3101 trip advisor cleaning.ipynb`**: Python notebook to clean Tripadvisor data
+- **`read_data.py`**: Python script to read in **`tripadvisor.csv`**
+- **`tripadvisor.csv`**: Finalized and cleaned Tripadvisor data.
+- **Data Source**:
+    1. [Tripadvisor](https://www.tripadvisor.com.sg/Attraction_Review-g294264-d2439664-Reviews-Universal_Studios_Singapore-Sentosa_Island.html)
 
 ---
 
@@ -140,4 +148,11 @@
 
 ---
 
-**uss_wait_times**: wait times for rides in USS scraped from Thrill Data  
+**uss_wait_times**: wait times for rides in USS scraped from Thrill Data
+- Contains five subfolders **`augmented_wait_time_data`**, **`cleaned_data_2022_2025`**, **`cleaning_python_script_2024_wait_times`**, **`python_scripts`**, and **`raw 2024 wait time datasets`**.
+    - **`cleaning_python_script_2024_wait_times`**
+    - **`data_scraping.py`**: Retrieve prediction data for ride wait times in USS for 2023-2024 from Thrill Data.
+    - **`uss_2024_wait_times_cleaning`**: Script to clean the combined 2024 wait time data for USS.
+    - **`uss_wait_times_combined`**: Script to combine monthly raw data for USS wait times into 1 csv file.
+- **Data Source**:
+    1. [Thrill Data](https://www.thrill-data.com/waits/park/unit/universal-studios-singapore/)
