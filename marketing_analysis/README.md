@@ -1,7 +1,9 @@
 # Overview
+
 The main objective of this project is to evaluate the impact of marketing strategies on guest behaviour through analysing past campaign data to understand changes in visitor segments, identify the most effective marketing content that drives engagement and visitation, and finally, recommend tailored marketing strategies to attract and retain different guest segments.
 
 # Retrieving Data
+
 The data used in this project consists of:
 1. Instagram post metrics from @universalstudiossingapore extracted using Instaloader (https://instaloader.github.io/module/structures.html).
 2. Survey responses collected from theme park visitors.
@@ -25,7 +27,7 @@ After extraction, we performed the following preprocessing steps:
 ### Feature Engineering
 After cleaning the dataset, we performed additional transformations to derive meaningful insights:
 1. Post classification via Bag of Words
-- We manyally defined a Bag of Words (BoW) to classify captions into different marketing categories.
+- We manually defined a Bag of Words (BoW) to classify captions into different marketing categories.
 - This enabled us to analyse the effectiveness of various marketing strategies based on engagement metrics and identify guest segments based on their interactions with different content types.
 - For example, if posts categorised under `family_friendly` receive high engagement, it su%ggests a segment of guests who are highly interested in family friendly experiences.
 2. Comment Volume (`num_comments`)
@@ -110,6 +112,7 @@ These transformations enabled deeper analysis into guest segments, spending beha
 # Data Analysis
 ## Analysis of Post Metrics
 
+### Running the Analysis
 To analyse the post metrics from the Instagram data, follow these steps:
 
 1. Ensure you are in the `DSA3101-group5` directory.
@@ -151,6 +154,53 @@ The elevated engagement levels on `high_value` and `family_friendly` posts sugge
 ### Limitations
 While these insights provide valuable information, there are some limitations to consider:
 - **Limited Data Points**: The analysis is based on a relatively small dataset of just over 400 posts spanning from 2022 to 2025. This limited data may affect the reliability of the conclusions drawn and should be taken into account when generalizing findings.
-- **Higher Post Engagement**: It is important to note that higher engagement does not necessarily equate to more effective marketing strategies. Engagement metrics can also be influenced by other factors like timing of posts, au/dience demographics, where different guest segments engage differently. Additionally, high engagement does not necessarily translate into increased park attendace or revenue.
+- **Higher Post Engagement**: It is important to note that higher engagement does not necessarily equate to more effective marketing strategies. Engagement metrics can also be influenced by other factors like timing of posts, audience demographics, where different guest segments engage differently. Additionally, high engagement does not necessarily translate into increased park attendace or revenue.
 
 Thus, while engagement metrics provide valuable insights, they should be interpreted alongside other key performance indicators.
+
+## Analysis of Survey Data
+
+### Running the Analysis
+To process the survey data and generate visualisations, run:
+```bash
+python marketing_analysis/marketing_survey.py
+```
+
+### Data Interpretation
+
+#### Visitor Spending Patters
+![Spender Distribution](visualisations/spender_dist.png)
+Most visitors are average spenders, follwoed by high spenders, and finally low spenders.
+
+#### Marketing Content Preferences
+![Marketing Preference Table](visualisations/mkting_pref_tablle.png)
+Visitors are most attracted to discounts, bundles, and special offers (deals_promotions), followed by new attraction announcements (attraction_events).
+
+#### Visitor Frequency Distribution
+![Frequency Distribution](visualisations/freq_dist.png)
+Since most visitors rarely visit, there is an opportunity to explore ways to increase repeat visits. 
+
+#### Visit Reasons and Marketing Preferences by Visitor Frequency 
+![Preferences and Reasons by Frequency](visualisations/pref_by_freq.png)
+Discounts, bundles, and special offers (`deals_promotions`) are the most effective marketing strategy across all visitor segments.
+The most common reason for visiting among rare, traveller, and moderate visitors is to spend time with family and friends (`social`).
+
+## Marketing Strategy Recommendations
+
+Based on the analysis on USS' Instaram posts and survey responses on guests' marketing preferences and visit motivations, we recommend the following marketing strategies for specific segments:
+
+### 1. Group Discounts & Promotions  
+- **Target Audience**: Rare and moderate visitors, families, and friend groups  
+- **Rationale**:  
+  - Survey data indicates that **discounts, bundles, and promotions** are the most attractive marketing content across all visitor types.  
+  - The most common reason for visiting among **rare, traveler, and moderate visitors** is to **spend time with family and friends** (social motivation).  
+  - Instagram engagement data also highlights strong interaction with **family-friendly content**.  
+- **Implementation**:  
+  - Offer **discounted group bundles** (e.g., "Family Fun Packages" or "Friends' Day Out Deals") to encourage social visits.  
+  - Prioritize **flash sales, loyalty programs, and early-bird discounts** to incentivize more visits from rare and moderate visitors.  
+  - Promote these deals through **targeted social media ads and email marketing campaigns** to reach potential visitors effectively.
+
+### 2. Seasonal High-Value Experiences 
+- **Target Audience**: Visitors interested in exclusive experiences (premium spenders)  
+- **Rationale**: Instagram engagement data indicates that **"high-value" content**, particularly for **Halloween events**, receives the most interaction. Additionally, engagement is highest from **July to October**.  
+- **Implementation**: Introduce **limited-time premium experiences** (e.g., VIP tours, exclusive nighttime events) during peak engagement periods to drive higher spending.  
