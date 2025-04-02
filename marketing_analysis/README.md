@@ -2,6 +2,14 @@
 
 The main objective of this project is to evaluate the impact of marketing strategies on guest behaviour through analysing past campaign data to understand changes in visitor segments, identify the most effective marketing content that drives engagement and visitation, and finally, recommend tailored marketing strategies to attract and retain different guest segments.
 
+# Project Structure
+
+- `marketing_survey.py` - Script to analyse and visualise survey responses on marketing-related questions  
+- `process_survey_data.py` - Script to further process survey responses on marketing-related questions  
+- `uss_post_insights_dashboard.py` - Runs the post engagement analysis and visualises it as a dashboard  
+- `visualisation/` - Folder containing visualisations  
+- `readme_images/` - Other images used in the README  
+
 # Retrieving Data
 
 The data used in this project consists of:
@@ -92,7 +100,7 @@ Visitors' exposure to different marketing channels was grouped into broader cate
 | `third_party_promotions` | Promotions or discounts from travel agencies or third-party platforms (e.g., Agoda, Groupon) |
 
 #### 5. Mapping Preferred Marketing Content  
-Visitors' preferred marketing content types were categorized as follows:  
+Visitors' preferred marketing content types were categorised as follows:  
 
 | Category | Description |
 |----------|------------|
@@ -135,7 +143,7 @@ The dashboard includes the following key features:
 
 ![Dashboard Overview](visualisations/dashboard_overview.png)
 
-On average, marketing strategies that emphasize exclusive experiences and premium offerings (`high_value`) and seasonal excitement and fear appeal (`halloween`) show higher engagement levels.
+On average, marketing strategies that emphasise exclusive experiences and premium offerings (`high_value`) and seasonal excitement and fear appeal (`halloween`) show higher engagement levels.
 
 Engagement levels tend to be higher from **July to October**, suggesting that this period is particularly effective for marketing campaigns.
 
@@ -191,11 +199,11 @@ Based on the analysis on USS' Instaram posts and survey responses on guests' mar
 - **Target Audience**: Rare and moderate visitors, families, and friend groups  
 - **Rationale**:  
   - Survey data indicates that **discounts, bundles, and promotions** are the most attractive marketing content across all visitor types.  
-  - The most common reason for visiting among **rare, traveler, and moderate visitors** is to **spend time with family and friends** (social motivation).  
+  - The most common reason for visiting among **rare, traveller, and moderate visitors** is to **spend time with family and friends** (social motivation).  
   - Instagram engagement data also highlights strong interaction with **family-friendly content**.  
 - **Implementation**:  
   - Offer **discounted group bundles** (e.g., "Family Fun Packages" or "Friends' Day Out Deals") to encourage social visits.  
-  - Prioritize **flash sales, loyalty programs, and early-bird discounts** to incentivize more visits from rare and moderate visitors.  
+  - Prioritise **flash sales, loyalty programs, and early-bird discounts** to incentivise more visits from rare and moderate visitors.  
   - Promote these deals through **targeted social media ads and email marketing campaigns** to reach potential visitors effectively.
 
 ### 2. Seasonal High-Value Experiences 
