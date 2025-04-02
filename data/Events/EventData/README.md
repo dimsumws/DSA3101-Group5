@@ -6,3 +6,5 @@ Events that are selected and chosen to be included are those that have **>50000*
 Other events could include events that happen in Sentosa Island itself, with people perhaps visting **Universal Studios Singapore** before, during or after the event. Some of these events can include **Zoukout**
 
 **2025_remainder_supplementary_event.csv** includes the data likewise in the structure of **supplementary_event_data_2016_2025.csv**, but rather for the remaining days of 2025 that were not included in **supplementary_event_data_2016_2025.csv**.
+
+Sources
