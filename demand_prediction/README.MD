@@ -142,6 +142,10 @@ Code for the following is available in the **`data/uss_wait_times`** directory.
 - Weather and event data had **lower feature importance** as compared to time-series features, but still played a part in determining wait times nonetheless.
 - Demand for attractions is highly **time-sensitive**, indicating a need for robust, accurate and frequent updates in forecasting systems to continuously predict wait times accurately.
 
+### Limitations:
+- Wait Times stored may not be entirely accurate, as wait time data could be inflated due to other factors besides crowds such as manpower shortages, ride breakdowns and so forth
+- Synthetic data used while accurate and close to the distribution of real world data may still be lacking in capturing wait time contexts and situations. 
+
 ### Business Impact
 - Investing in accurate, high-frequency wait time prediction systems helps prevent **operational blind spots** and avoids **snowballing inaccuracies** from outdated data. This  ensures **continuity in predictive accuracy for rides**, ultimately enhancing overall guest experience with accurate information and operational efficiency at scale.
 - Enhances **staffing and resource allocation** with accurate daily demand forecasts.
