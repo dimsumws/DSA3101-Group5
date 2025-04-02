@@ -47,7 +47,7 @@ The folders in these questions contain the analysis in either a Python notebook,
 
 ### Subgroup B
 
-Folders in Subgroup B contain models in Python files. However, some questions, such as B2 and B5, contain PDF reports on findings.
+Folders in Subgroup B contain models in Python files. However, B2 contains a PDF report on findings.
 
 1. [Demand Prediction for Attractions and Services](./demand_prediction/)
 
@@ -65,9 +65,9 @@ Folders in Subgroup B contain models in Python files. However, some questions, s
 
 - `risk_prediction_model`
 
-5. [IoT Data Integration for Experience Optimization](./reports/)
+5. [IoT Data Integration for Experience Optimization](./sentiment_analysis/)
 
-- `reports`
+- `sentiment_analysis`
 
 ## Group Members
 
