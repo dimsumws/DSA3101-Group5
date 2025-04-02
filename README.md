@@ -53,9 +53,9 @@ Folders in Subgroup B contain models in Python files. However, B2 contains a PDF
 
 - `demand_prediction`
 
-2. [Optimization of Attraction Layouts and Schedules](./reports/Optimisation_of_AttractionLayouts.pdf)
+2. [Optimization of Attraction Layouts and Schedules](./layout_optimisation/Optimisation_of_AttractionLayouts.pdf)
 
-- `reports`
+- `layout_optimisation`
 
 3. [Resource Allocation for Demand Variability](./resource_optimisation_analysis/)
 
