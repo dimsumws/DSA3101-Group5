@@ -1,0 +1,70 @@
+Feature,Importance
+attdn_roll_mean_3,0.6959543566853386
+attdn_lag_1,0.2736341733252002
+is_weekend,0.020877909163638932
+attdn_roll_std_5,0.005875590688589973
+attdn_roll_std_7,0.0020806430561190054
+temp_high,0.0002501390736652295
+Highest 60 Min Rainfall (mm),0.00020856547470097392
+windspeed,0.00018596618247452516
+avg_daily_relative_humidity,0.00012502374421009192
+humidity_low,9.488462632788923e-05
+Mean Wind Speed (km/h),7.561433535404436e-05
+Mean Temperature (°C),7.490355872124761e-05
+Max Wind Speed (km/h),6.558081864210539e-05
+south_avg_daily_psi,6.17176630861915e-05
+week_of_year,5.9453493904185753e-05
+west_avg_daily_psi,5.495091131872583e-05
+central_avg_daily_psi,4.164767662609982e-05
+Minimum Temperature (°C),3.787396852958526e-05
+wind_speed_high,3.346527803463959e-05
+east_avg_daily_psi,3.056869007536861e-05
+tfidf_0,2.2682892949582116e-05
+north_avg_daily_psi,2.19990379134006e-05
+average_nationwide_psi,1.956074093415199e-05
+Highest 30 Min Rainfall (mm),1.6582341324298186e-05
+Maximum Temperature (°C),1.3280991987737377e-05
+tfidf_17,1.2060939157501465e-05
+Highest 120 Min Rainfall (mm),1.1147980184468137e-05
+tfidf_21,9.048464924795406e-06
+Daily Rainfall Total (mm),9.042151901279968e-06
+tfidf_9,7.2981358081083515e-06
+temp_low,6.870332880370659e-06
+month,5.9594229952619565e-06
+tfidf_29,3.669071842666214e-06
+tfidf_11,2.850425961781518e-06
+tfidf_12,2.563290930846682e-06
+tfidf_1,2.393181774233295e-06
+tfidf_24,1.993158296016126e-06
+tfidf_28,1.8955851298317608e-06
+tfidf_10,1.6916755817125496e-06
+Cultural_Event,1.4367959938393037e-06
+tfidf_5,1.2010779861419704e-06
+tfidf_22,1.1550659041098597e-06
+tfidf_2,4.4708696954422447e-07
+humidity_high,1.4173611072111093e-07
+wind_speed_low,0.0
+is_holiday_weekend,0.0
+Social_Event,0.0
+holiday_flag,0.0
+Is_Event,0.0
+Concert_Event,0.0
+Sports_Event,0.0
+MICE_Event,0.0
+Theatre_Event,0.0
+tfidf_13,0.0
+tfidf_6,0.0
+tfidf_7,0.0
+tfidf_8,0.0
+tfidf_3,0.0
+tfidf_4,0.0
+tfidf_15,0.0
+tfidf_14,0.0
+tfidf_20,0.0
+tfidf_19,0.0
+tfidf_18,0.0
+tfidf_16,0.0
+tfidf_25,0.0
+tfidf_23,0.0
+tfidf_27,0.0
+tfidf_26,0.0

@@ -3,7 +3,7 @@ import numpy as np
 from datetime import datetime
 from faker import Faker
 
-reference_path = "../../../data/Meteorological/datasets/final_data/merged_weather_data_clean.csv"
+reference_path = "../datasets/final_data/merged_weather_data_clean.csv"
 reference_df = pd.read_csv(reference_path)
 dates = pd.date_range(start="2025-02-23", end="2025-12-31", freq="D")
 num_days = len(dates)
@@ -69,6 +69,6 @@ def get_psi_rating(value):
 
 synth_weather['psi_level_rating'] = synth_weather['average_nationwide_psi'].apply(get_psi_rating)
 
-output_path = "../../../data//Meteorological/datasets/final_data/synthetic_weather_data_faker_style_2025_cleaned.csv"
+output_path = "../datasets/final_data/synthetic_weather_data_faker_style_2025_cleaned.csv"
 synth_weather.to_csv(output_path, index=False)
 print(f"✅ Saved cleaned synthetic data to: {output_path}")

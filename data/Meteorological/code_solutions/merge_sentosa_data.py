@@ -3,6 +3,26 @@ import pandas as pd
 import numpy as np
 import glob
 import chardet
+import zipfile
+import shutil
+
+# Path to zip file
+zip_file_path = "../datasets/raw_data/daily_data_sentosa/sentosa_data.zip"
+
+temp_extract_folder = "../datasets/temp_unzipped"
+
+if os.path.exists(temp_extract_folder):
+    shutil.rmtree(temp_extract_folder)
+os.makedirs(temp_extract_folder, exist_ok=True)
+
+# Unzip all contents
+with zipfile.ZipFile(zip_file_path, 'r') as zip_ref:
+    zip_ref.extractall(temp_extract_folder)
+
+# Now process CSV files in this temporary folder
+folder_path = temp_extract_folder  # can reuse your existing variable name
+destination_path = "../datasets/final_data"
+files = glob.glob(os.path.join(folder_path, "*.csv"))
 
 folder_path = "../datasets/raw_data/daily_data_sentosa"
 destination_path = "../datasets/final_data"
