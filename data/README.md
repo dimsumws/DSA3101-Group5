@@ -136,7 +136,6 @@
 
 ---
 
-
 **uss_ride_wait_times**: wait times for all individual rides in USS scraped from Thrill Data
 - **`Raw Data`** subfolder
     - Each Individual Ride in USS has a subfolder, with montlhy CSV files containing 5 Minute Interval Wait Time data for corresponding month
