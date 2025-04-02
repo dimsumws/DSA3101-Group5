@@ -85,13 +85,13 @@ This analysis integrates **actual wait time data** from Universal Studios Singap
 Based on insights from guest behaviour and wait time trends, the following strategies are proposed to improve operational efficiency and guest satisfaction:
 
 - **Cross-train staff for flexible deployment**
-    Enable staff to take on multiple roles and assign **floating staff** based on model-driven demand forecasts. This ensures surge coverage without increasing overall headcount.
+    - Enable staff to take on multiple roles and assign **floating staff** based on model-driven demand forecasts. This ensures surge coverage without increasing overall headcount.
 
 - **Leverage self-service kiosks for F&B**
-    Reduce dependency on fixed F&B manpower by **deploying kiosks** in high-traffic areas, lowering labour costs while maintaining service levels.
+    - Reduce dependency on fixed F&B manpower by **deploying kiosks** in high-traffic areas, lowering labour costs while maintaining service levels.
 
 - **Engage part-time support during peaks**
-    During **school holidays, weekends, and special events**, bring in **part-timers** to support operations without incurring long-term staffing commitments.
+    - During **school holidays, weekends, and special events**, bring in **part-timers** to support operations without incurring long-term staffing commitments.
 
 These measures work hand-in-hand with the **staff optimisation model**, ensuring demand-responsive staffing while controlling operational expenditure.
 
