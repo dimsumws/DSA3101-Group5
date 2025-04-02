@@ -7,7 +7,7 @@ this subfolder contains processing, api requesting code, and merger of all csv f
 - python scripts are stored in *code_solutions subfolder*
 
 ## datasources
-[PSI API Data for 2025 dates](https://data.gov.sg/datasets/d_fe37906a0182569d891506e815e819b7/view) and [Historical 24-hr PSI dataset csv](https://data.gov.sg/datasets/d_b4cf557f8750260d229c49fd768e11ed/view) -> Both of these were used in *clean_and_merge_psi.py* and stored in **daily_avg_psi_readings.csv**
+[PSI API Data for 2025 dates](https://data.gov.sg/datasets/d_fe37906a0182569d891506e815e819b7/view) and [Historical 24-hr PSI dataset csv](https://data.gov.sg/datasets/d_b4cf557f8750260d229c49fd768e11ed/view) -> Both of these were used in *clean_and_merge_psi.py* and stored in **daily_avg_psi_readings.csv**, additionally, futher transformation of the collected data was done to classify the PSI Health Rating for that day based on the average PSI Value.
 
 [24 Hour Daily Forecast Data](https://data.gov.sg/datasets/d_ce2eb1e307bda31993c533285834ef2b/view) -> used in *get_24_hr_daily_forecast.py* and stored in **24_hr_weather_forecast_data.csv**
 

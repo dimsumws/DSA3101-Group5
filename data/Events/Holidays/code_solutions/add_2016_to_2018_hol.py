@@ -95,5 +95,5 @@ df_updated = pd.concat([df_daily_holidays, df_new_holidays], ignore_index=True)
 df_updated["date"] = pd.to_datetime(df_updated["date"], format="%d/%m/%Y")
 df_updated = df_updated.sort_values(by=["date"]).reset_index(drop=True)
 df_updated["date"] = df_updated["date"].dt.strftime("%d/%m/%Y")
-sorted_file_path = "daily_school_holidays_combined_final.csv"
+sorted_file_path = "daily_school_holidays_combined_updated.csv"
 df_updated.to_csv(sorted_file_path, index=False)
