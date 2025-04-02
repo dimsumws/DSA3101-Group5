@@ -57,21 +57,21 @@
 **`instagram`**: instagram posts and stories posted by USS, extraction and data cleaning.
 - Contains two subfolders **`Data`** and **`Python`**
     - **`Data`**
-        **`category_metrics.csv`**
-        - **`cleaned_instagram_data.csv`**:
-        - **`cleaned_instagram_stories.csv`**:
-        - **`uss_ig_classified_sentiment.csv`** 
-        - **`uss_ig_classified.csv`**
-        - **`uss_ig_stories.csv`**:
-        - **`uss_ig.csv`**
+        **`category_metrics.csv`**: Aggregated engagement metrics for different marketing categories. 
+        - **`cleaned_instagram_data.csv`**:  A cleaned version of `uss_ig.csv` with improved formatting and consistency.
+        - **`cleaned_instagram_stories.csv`**: A cleaned version of `uss_ig_stories.csv`.
+        - **`uss_ig_classified_sentiment.csv`**:  A further processed version of `uss_ig_classified.csv`, including: `num_comments`, `sentiment`, `engagement_score`.
+        - **`uss_ig_classified.csv`**: An enhanced version of `cleaned_instagram_data.csv`, with additional binary columns indicating whether a post belongs to a specific marketing category.
+        - **`uss_ig_stories.csv`**: Contains raw Instagram highlights (stories) data.
+        - **`uss_ig.csv`**: Contains raw Instagram post data.
         
     - **`Python`**
-        - **`615_import_firefox_session.py`**:
-        - **`clean_ig_post.py`**:
-        - **`comment_engineering.py`**
-        - **`extract_ig_post.py`**:
-        - **`extract_ig_story.py`**:
-        - **`marketing_classification.py`**
+        - **`615_import_firefox_session.py`**: Script to import user's Instagram session from Firefox.
+        - **`clean_ig_post.py`**: Script to clean `uss_ig.csv` and `uss_ig_stories.csv`
+        - **`comment_engineering.py`**: Processes comments and generates new columns: num_comments, sentiment, and engagement_score.
+        - **`extract_ig_post.py`**: Script to extract data from @universalstudiossingapore's feed posts.
+        - **`extract_ig_story.py`**: Script to extract data from @universalstudiossingapore's story highlights.
+        - **`marketing_classification.py`**: Script to classify posts into specific marketing categories.
     
 ---
 
