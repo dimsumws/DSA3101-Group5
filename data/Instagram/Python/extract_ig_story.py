@@ -21,6 +21,8 @@ def extract_story_data(username, csv_file="uss_ig_stories.csv"):
     L.load_session_from_file("group5_324")  # Load session for authentication
     profile = instaloader.Profile.from_username(L.context, username)
 
+    csv_file = os.path.abspath(os.path.join(os.getcwd(), f"../Data/{csv_file}"))
+
     # Check if the file exists, if not create an empty DataFrame
     if os.path.exists(csv_file):
         df = pd.read_csv(csv_file)

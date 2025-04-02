@@ -18,9 +18,32 @@ def get_post_type(post):
     
 
 def extract_post_data(username, csv_file="uss_ig.csv"):
+    """
+    Extracts Instagram post data for a specified user and saves it to a CSV file.
+
+    This function utilises the Instaloader library to fetch post details from a user's Instagram profile.
+    It collects the following information for each post:
+    - Shortcode: Unique identifier for the post
+    - Caption: Text content of the post
+    - Number of Likes: Total likes received by the post
+    - Comments: List of tuples containing usernames and their comments
+    - Post Date: Date of the post in UTC format
+    - Post Type: Type of the post (image, video, etc.)
+
+    The extracted data is appended to a specified CSV file. If the file does not exist, it creates a new one with appropriate column headers.
+
+    Parameters:
+        username (str): The Instagram username of the profile to extract data from.
+        csv_file (str): The name of the CSV file to save the extracted data. Default is "uss_ig.csv".
+
+    Returns:
+        None: This function does not return a value. It saves the extracted data directly to the specified CSV file.
+    """
     L = instaloader.Instaloader()
     L.load_session_from_file("group5_324")  # Load session for authentication
     profile = instaloader.Profile.from_username(L.context, username)
+
+    csv_file = os.path.abspath(os.path.join(os.getcwd(), f"../Data/{csv_file}"))
 
     # Check if the file exists, if not create an empty DataFrame
     if os.path.exists(csv_file):
