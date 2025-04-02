@@ -66,15 +66,33 @@ Now, we consider existing solutions that are in place in the tourism industry. F
 
 ### Current limitations:
 
-Before presenting our recommendations, we believe it is vital to first highlight the shortcomings of IoT solutions at USS, specifically the USS application. Currently, the USS application lacks in terms of information disseminated to the guests. The application currently only shows the rough location of their rides 
+Before presenting our recommendations, we believe it is vital to first highlight the shortcomings of IoT solutions at USS, specifically the USS application. Currently, the USS application lacks in terms of information disseminated to the guests. For instance, as seen in the image below, the application currently only shows the rough location of their rides, shows, dining places, etc. However, it does not show the users' current location, which makes navigation via the application challenging.
+
+![image](https://github.com/user-attachments/assets/63f2de1c-b440-4858-b6f1-558d122dd8fe)
 
 
-![003bb326-94cb-4542-8a80-b8c854feb50b](https://github.com/user-attachments/assets/92eebe20-36b4-4e69-8e5b-82afba8f3737)
+Secondly, as seen from the image below, while the application shows the estimated queueing time for their rides, it does not show guests the current progress when they are inside the queue. Furthermore, there does not exist a virtual queuing feature. 
+
+![Screenshot 2025-04-02 191642](https://github.com/user-attachments/assets/7814efcf-18f6-4768-abf6-0d20dca34843)
+
+### Business impact:
+
+Guest satisfaction is closely tied to the queues, costs and ride experiences. According to queue theory, poor queue management could cost businesses due to customers’ perceived trade-offs. As customers get frustrated, they are less likely to spend and return, potentially resulting in a loss of revenue for USS. Hence, to retain loyalty and increase spending, the park can consider adopting strategies to make queues more bearable and forgettable. (Zhou & Soman, 2003) 
+
+### Recommendations:
+
+The park can utilise the existing USS app to adopt features such as:
+* Current Queue progress
+* Virtual queueing system
+* Guest location tracking and suggestions. This allows for the park to identify overcrowded areas and redirect visitors with notifications (eg “Transformers currently have low wait times”)
+* Dissemination information and navigation (eg “The UV index is now 3-5, it is recommended that you apply sunscreen”/ “The chance of raining is 67%, the nearest shelter is at …”)
 
 
-### Insights and Recommendations:
+![USS prototype](https://github.com/user-attachments/assets/c75aa543-0778-4df1-b3e5-f9bc34e08bd4)
 
-Guest satisfaction is closely tied to the queues, costs and ride experiences. 
+
 
 ### References:
 Virtual Queues | Walt Disney World Resort. (n.d.). https://disneyworld.disney.go.com/guest-services/virtual-queue/
+
+
