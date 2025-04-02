@@ -8,7 +8,7 @@ import datetime
 url = "https://api.data.gov.sg/v1/environment/relative-humidity"
 
 # Define date range
-start_date = datetime(2025, 1, 1)
+start_date = datetime(2016, 3, 1)
 end_date = datetime(2025, 2, 22)
 
 rh_data = []

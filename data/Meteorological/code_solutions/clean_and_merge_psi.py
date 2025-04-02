@@ -41,7 +41,7 @@ import requests
 # API endpoint
 url = "https://api-open.data.gov.sg/v2/real-time/api/psi"
 
-start_date = datetime.datetime(2025, 1, 1)
+start_date = datetime.datetime(2014, 1, 1)
 end_date = datetime.datetime(2025, 2, 23)
 psi_data = []
 current_date = start_date

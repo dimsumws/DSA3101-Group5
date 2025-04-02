@@ -210,7 +210,7 @@ def train_ride_model(ride_name: str):
     sns.regplot(
         x=y_test,
         y=y_pred,
-        scatter_kws={'alpha': 0.5, 'edgecolor': 'k'},
+          scatter_kws={'alpha': 0.5, 'edgecolor': 'k'},
         line_kws={'color': 'red', 'linestyle': '--'},
         x_jitter=0.8,
         y_jitter=0.8,
@@ -225,7 +225,7 @@ def train_ride_model(ride_name: str):
 
     plt.xlabel("Actual Wait Time (min)")
     plt.ylabel("Predicted Wait Time (min)")
-    plt.title(f"{ride_name.capitalize()} Ride Model\nRMSE={final_rmse:.2f}, R²={final_r2:.3f}")
+    plt.title(f"{ride_name} Ride Model\nRMSE={final_rmse:.2f}, R²={final_r2:.3f}")
 
     plt.tight_layout()
     plt.savefig(f"{subfolder}/best_{ride_name}_gb_model.png")
@@ -243,20 +243,18 @@ def train_ride_model(ride_name: str):
 
     all_feature_names = list(numeric_feature_names) + list(cat_feature_names)
 
-    fi_df = pd.DataFrame({
+    feat_impt_df = pd.DataFrame({
         "feature": all_feature_names,
         "importance": importances
     }).sort_values("importance", ascending=False)
 
     plt.figure(figsize=(8, 6))
-    sns.barplot(data=fi_df, x="importance", y="feature")
+    sns.barplot(data=feat_impt_df, x="importance", y="feature")
     plt.title(f"{ride_name.capitalize()} Feature Importances")
     plt.tight_layout()
     plt.savefig(f"{subfolder}/best_{ride_name}_feature_importance.png")
     plt.close()
-
-    print(f"\nModel and plots saved in: {subfolder}")
-
+    
 if __name__ == "__main__":
     # Prompt user for ride name in terminal
     ride_input = input("Enter the ride name (e.g. 'minionmayhem'): ")

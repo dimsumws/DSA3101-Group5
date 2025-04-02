@@ -85,45 +85,72 @@
         - **`get_4_day_forecast.py`**: Retrieve 4 Day Forecast Data from March 2016 to February 2025 data.gov.sg public API.
         - **`get_5_min_rainfall.py`**: Retrieve 5 Min Rainfall Data from December 2023 to January 2025 from data.gov.sg public API.
         - **`get_24_hr_daily_forecast.py`**: Retrieve 24 hr Daily Forecast Data from March 2016 to February 2025 data.gov.sg public API.
-        - **`get_avg_windspeed.py`**: Retrieve daily windspeed data from March 2016 to February 2025 using data.gov.sg public API, perform data transformation to find average daily windspeed
-        - **`join_tables_tgt.py`**: Python Script to merge all weather related CSV files together, from 2016 to 2025
+        - **`get_avg_windspeed.py`**: Retrieve daily windspeed data from March 2016 to February 2025 using data.gov.sg public API, perform data transformation to find average daily windspeed.
+        - **`join_tables_tgt.py`**: Python Script to merge all weather related CSV files together, from 2016 to 2025.
         - **`merge_rh.py`**: Retrieve Relative Humidity data from March 2016 to February 2025 using data.gov.sg public API. Perform data transformation to find daily average RH value.
         - **`merge_sentosa_data.py`**: Merge Monthly Sentosa Weather CSV files into one central file. 
     - **`datasets`**
         - **`final_data`**
-            - **`4_day_weather_forecasts.csv`**: 4 Day Weather Forecasts data from 2016 to 2025
-            - **`24_hr_weather_forecast_data.csv`**: 24 Hour Weather Forecast data from 2016 to 2025
-            - **`daily_avg_psi_readings.csv`**: Daily Average PSI Readings data from 2014 to 2025
-            - **`final_augmented_weather_sentosa_data.csv`**: Metoerological Service Singapore Data from 2016 to 2025
-            - **`final_merged_RH_2017_2025.csv`**: Average Relative Humidity data from 2017 to 2025
-            - **`sentosa_avg_windspeed.csv`**: Average Windspeed data from 2017 to 2025
-            - **`sentosa_rainfall_5min_int.csv`**: 5 Minute Interval Sentosa Rainfall data for years 2024 and 2025
-            - **`synthetic_weather_data_2025_cleaned.csv`**: Synthetic daily weather data for rest of 2025 dates
+            - **`4_day_weather_forecasts.csv`**: 4 Day Weather Forecasts data from 2016 to 2025.
+            - **`24_hr_weather_forecast_data.csv`**: 24 Hour Weather Forecast data from 2016 to 2025.
+            - **`daily_avg_psi_readings.csv`**: Daily Average PSI Readings data from 2014 to 2025.
+            - **`final_augmented_weather_sentosa_data.csv`**: Metoerological Service Singapore Data from 2016 to 2025.
+            - **`final_merged_RH_2017_2025.csv`**: Average Relative Humidity data from 2017 to 2025.
+            - **`sentosa_avg_windspeed.csv`**: Average Windspeed data from 2017 to 2025.
+            - **`sentosa_rainfall_5min_int.csv`**: 5 Minute Interval Sentosa Rainfall data for years 2024 and 2025.
+            - **`synthetic_weather_data_2025_cleaned.csv`**: Synthetic daily weather data for rest of 2025 dates.
         - **`raw_data`**
             - **`daily_data_sentosa`**:
-                - **`sentosa_data.zip`**: zip file containing monthly data of Sentosa from MSS
-            - **`Historical24hrPSI.csv`**: 24 Hour Historical PSI Values from data.gov.sg
-    - **Data Sources**
+                - **`sentosa_data.zip`**: zip file containing monthly data of Sentosa from MSS.
+            - **`Historical24hrPSI.csv`**: 24 Hour Historical PSI Values from data.gov.sg.
+    - **Data Sources**:
         1. [data.gov.sg](https://data.gov.sg/)
         2. [Meteorological Service Singapore](https://www.weather.gov.sg/climate-historical-daily/)
 
 ---
 
 **survey_responses**: survey responses obtained from our survey  
+- **`survey_responses.csv`**: Raw data of survey responses
+- **`survey_cleaning.py`**: Python script to perform data cleaning and responses 
+- **`labels.csv`**: List of Labels for Survey Questions
+- **`cleaned_survey_responses.csv`**: Cleaned version of data responses
 
 ---
 
-**tripadvisor_reviews**: reviews on USS scraped from TripAdvisor  
+**tripadvisor_reviews**: reviews on USS scraped from Tripadvisor  
+- **`DSA3101 trip advisor cleaning.ipynb`**: Python notebook to clean Tripadvisor data
+- **`read_data.py`**: Python script to read in **`tripadvisor.csv`**
+- **`tripadvisor.csv`**: Finalized and cleaned Tripadvisor data.
+- **Data Source**:
+    1. [Tripadvisor](https://www.tripadvisor.com.sg/Attraction_Review-g294264-d2439664-Reviews-Universal_Studios_Singapore-Sentosa_Island.html)
 
 ---
 
 **uss_attraction_details**: details on entities in USS  
+- **`attractions.csv`**: Contains all entities in USS in format: [name, attraction type, zone]
+- **`meetandgreet.csv`**: Contains all show timings in format: [title, show times]
+- **`rides.csv`**: Contains all rides in USS in format: [ride, type, environment, description]
+- **Data Source**:
+    1. [Resorts World Sentosa](https://www.rwsentosa.com/en/Play/universal-studios-singapore)
 
 ---
-
 
 **uss_ride_wait_times**: wait times for all individual rides in USS scraped from Thrill Data
+- **`Raw Data`** subfolder
+    - Each Individual Ride in USS has a subfolder, with montlhy CSV files containing 5 Minute Interval Wait Time data for corresponding month
+- **`merged_XXX.csv`**: Each Ride's total wait time data across all months into an individaul folder
+- **`merge_csv.py`**: Python script to merge each ride's **`merged_XXX"`** into **`all_ride_wait_times.csv`**
+- **`all_ride_wait_times.csv`**: All rides 5 Minute Interval wait time data from January 2024 to March 2025
+- **Data Source**:
+    1. [Thrill Data](https://www.thrill-data.com/waits/park/unit/universal-studios-singapore/)
 
 ---
 
-**uss_wait_times**: wait times for rides in USS scraped from Thrill Data  
+**uss_wait_times**: wait times for rides in USS scraped from Thrill Data
+- Contains five subfolders **`augmented_wait_time_data`**, **`cleaned_data_2022_2025`**, **`cleaning_python_script_2024_wait_times`**, **`python_scripts`**, and **`raw 2024 wait time datasets`**.
+    - **`cleaning_python_script_2024_wait_times`**
+    - **`data_scraping.py`**: Retrieve prediction data for ride wait times in USS for 2023-2024 from Thrill Data.
+    - **`uss_2024_wait_times_cleaning`**: Script to clean the combined 2024 wait time data for USS.
+    - **`uss_wait_times_combined`**: Script to combine monthly raw data for USS wait times into 1 csv file.
+- **Data Source**:
+    1. [Thrill Data](https://www.thrill-data.com/waits/park/unit/universal-studios-singapore/)
