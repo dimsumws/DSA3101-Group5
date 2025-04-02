@@ -130,7 +130,7 @@
 **uss_attraction_details**: details on entities in USS  
 - **`attractions.csv`**: Contains all entities in USS in format: [name, attraction type, zone]
 - **`meetandgreet.csv`**: Contains all show timings in format: [title, show times]
-- **`rides.csv`**: : Contains all rides in USS in format: [ride, type, environment, description]
+- **`rides.csv`**: Contains all rides in USS in format: [ride, type, environment, description]
 - **Data Source**:
     1. [Resorts World Sentosa](https://www.rwsentosa.com/en/Play/universal-studios-singapore)
 
