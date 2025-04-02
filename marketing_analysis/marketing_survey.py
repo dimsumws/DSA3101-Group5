@@ -8,8 +8,6 @@ from process_survey_data import (
 )
 import seaborn as sns
 
-import pandas as pd
-import matplotlib.pyplot as plt
 
 base_dir = os.path.abspath(os.path.join(os.getcwd(), "marketing_analysis/visualisations"))
 

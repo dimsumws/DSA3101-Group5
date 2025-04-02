@@ -23,7 +23,7 @@ full_dataset = pd.concat(dataframes, ignore_index=True)
 
 # Step 4: Save combined dataset in data directory
 
-output_folder = os.path.join(os.path.dirname(__file__), "..", "data")
+output_folder = os.path.join(os.path.dirname(__file__), "..", "raw 2024 wait time datasets")
 output_path = os.path.join(output_folder, "combined_2024_wait_times.csv")
 full_dataset.to_csv(output_path, index=False)
 

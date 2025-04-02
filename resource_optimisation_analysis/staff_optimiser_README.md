@@ -43,7 +43,7 @@ This module aims to dynamically allocate staff within Universal Studios Singapor
 ### Key Findings:
 
 - Staff demand peaks align with historically high wait times between 1 PM and 7 PM.
-- USS typically underestimates demand in previous years - this bias is accounted for in forecast adjustments.
+- USS typically underestimates and overestimates demand in previous years - this bias is accounted for in forecast adjustments.
 - Staff recommendations adjust based on predicted demand surges, input constraints, and managerial priorities.
 
 ## Applications
@@ -67,3 +67,9 @@ This module aims to dynamically allocate staff within Universal Studios Singapor
 
 - **Multi-Objective Optimisation:**
     Introduce other goals such as staff fatigue reduction or ride-specific allocation for more granularity.
+
+## Files Referenced
+
+| Script                             | Description                                                  |
+|------------------------------------|--------------------------------------------------------------|
+| `staff_optimiser.py` | optimises hourly staff allocation according to demand            |

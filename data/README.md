@@ -67,7 +67,7 @@
         
     - **`Python`**
         - **`615_import_firefox_session.py`**: Script to import user's Instagram session from Firefox.
-        - **`clean_ig_post.py`**: Script to clean `uss_ig.csv` and `uss_ig_stories.csv`.
+        - **`clean_ig_post.py`**: Script to clean `uss_ig.csv` and `uss_ig_stories.csv`
         - **`comment_engineering.py`**: Processes comments and generates new columns: num_comments, sentiment, and engagement_score.
         - **`extract_ig_post.py`**: Script to extract data from @universalstudiossingapore's feed posts.
         - **`extract_ig_story.py`**: Script to extract data from @universalstudiossingapore's story highlights.
@@ -75,7 +75,6 @@
 
     - **Data Source**: 
         1. [Instagram](https://www.instagram.com/universalstudiossingapore/)
-    
 ---
 
 **`meteorological`**: information about the weather in Singapore, together with data collection and cleaning code.
