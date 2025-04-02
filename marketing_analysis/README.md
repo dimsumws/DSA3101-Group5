@@ -157,6 +157,8 @@ The elevated engagement levels on `high_value` and `family_friendly` posts sugge
 While these insights provide valuable information, there are some limitations to consider:
 - **Limited Data Points**: The analysis is based on a relatively small dataset of just over 400 posts spanning from 2022 to 2025. This limited data may affect the reliability of the conclusions drawn and should be taken into account when generalizing findings.
 - **Higher Post Engagement**: It is important to note that higher engagement does not necessarily equate to more effective marketing strategies. Engagement metrics can also be influenced by other factors like timing of posts, audience demographics, where different guest segments engage differently. Additionally, high engagement does not necessarily translate into increased park attendace or revenue.
+- **Instagram Representation**: Instagram posts may not fully represent the broader marketing campaigns that Universal Studios Singapore (USS) has implemented. Other marketing channels, such as paid advertisements, partnerships, and offline promotions, may contribute significantly to overall campaign effectiveness but are not captured in this dataset.
+- **Keyword-Based Classification**: The classification of posts into marketing categories relies on predefined keywords. This method may introduce biases or inaccuracies, as posts that do not contain these specific keywords may be misclassified or overlooked. Additionally, certain marketing themes may not be easily identifiable through keyword analysis alone, limiting the precision of category-based insights.
 
 Thus, while engagement metrics provide valuable insights, they should be interpreted alongside other key performance indicators.
 
