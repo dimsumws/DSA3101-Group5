@@ -1,6 +1,6 @@
 # Dataset Overview 
 
-Thisfolder contains all datasets related to Universal Studios Singapore's Instagram posts. Below is a description of each file:  
+This folder contains all datasets related to Universal Studios Singapore's Instagram posts. Below is a description of each file:  
 
 ### **Raw Datasets**  
 - **`uss_ig.csv`** – Contains raw Instagram post data, including:  
