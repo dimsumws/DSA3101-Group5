@@ -69,6 +69,6 @@ def get_psi_rating(value):
 
 synth_weather['psi_level_rating'] = synth_weather['average_nationwide_psi'].apply(get_psi_rating)
 
-output_path = "../datasets/final_data/synthetic_weather_data_faker_style_2025_cleaned.csv"
+output_path = "../datasets/final_data/synthetic_weather_data_2025_cleaned.csv.csv"
 synth_weather.to_csv(output_path, index=False)
 print(f"✅ Saved cleaned synthetic data to: {output_path}")
