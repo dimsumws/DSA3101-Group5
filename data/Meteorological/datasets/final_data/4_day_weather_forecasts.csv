@@ -12558,3 +12558,31 @@ record_date,forecast_timestamp,forecast_date,day,temp_low,temp_high,humidity_low
 2025-02-23,2025-02-25T00:00:00+08:00,25/02/2025,Tuesday,24,33,60,95,Afternoon thundery showers,Thundery Showers,10,15,ENE
 2025-02-23,2025-02-26T00:00:00+08:00,26/02/2025,Wednesday,24,33,60,95,Afternoon thundery showers,Thundery Showers,10,15,NE
 2025-02-23,2025-02-27T00:00:00+08:00,27/02/2025,Thursday,24,34,55,95,Afternoon thundery showers,Thundery Showers,5,15,NE
+2025-02-23,2025-02-24T00:00:00+08:00,24/02/2025,Monday,25,34,60,95,Afternoon thundery showers,Thundery Showers,5,15,ENE
+2025-02-23,2025-02-25T00:00:00+08:00,25/02/2025,Tuesday,24,33,60,95,Afternoon thundery showers,Thundery Showers,10,15,ENE
+2025-02-23,2025-02-26T00:00:00+08:00,26/02/2025,Wednesday,24,33,60,95,Afternoon thundery showers,Thundery Showers,10,15,NE
+2025-02-23,2025-02-27T00:00:00+08:00,27/02/2025,Thursday,24,34,55,95,Afternoon thundery showers,Thundery Showers,5,15,NE
+2025-02-24,2025-02-25T00:00:00+08:00,25/02/2025,Tuesday,24,33,60,95,Afternoon thundery showers,Thundery Showers,10,15,ENE
+2025-02-24,2025-02-26T00:00:00+08:00,26/02/2025,Wednesday,24,33,60,95,Afternoon thundery showers,Thundery Showers,10,15,ENE
+2025-02-24,2025-02-27T00:00:00+08:00,27/02/2025,Thursday,24,34,55,95,Afternoon thundery showers,Thundery Showers,5,15,NE
+2025-02-24,2025-02-28T00:00:00+08:00,28/02/2025,Friday,24,34,55,95,Afternoon showers,Showers,15,25,ENE
+2025-02-25,2025-02-26T00:00:00+08:00,26/02/2025,Wednesday,24,34,60,95,Afternoon thundery showers,Thundery Showers,10,20,ENE
+2025-02-25,2025-02-27T00:00:00+08:00,27/02/2025,Thursday,24,33,65,95,Late morning and early afternoon thundery showers,Thundery Showers,10,15,NE
+2025-02-25,2025-02-28T00:00:00+08:00,28/02/2025,Friday,24,34,55,95,Afternoon thundery showers,Thundery Showers,15,25,ENE
+2025-02-25,2025-03-01T00:00:00+08:00,01/03/2025,Saturday,24,34,55,95,Afternoon thundery showers,Thundery Showers,10,20,ENE
+2025-02-26,2025-02-27T00:00:00+08:00,27/02/2025,Thursday,24,33,60,95,Afternoon thundery showers,Thundery Showers,10,15,NE
+2025-02-26,2025-02-28T00:00:00+08:00,28/02/2025,Friday,24,33,55,95,Afternoon thundery showers,Thundery Showers,15,25,ENE
+2025-02-26,2025-03-01T00:00:00+08:00,01/03/2025,Saturday,24,34,55,95,Afternoon thundery showers,Thundery Showers,10,20,ENE
+2025-02-26,2025-03-02T00:00:00+08:00,02/03/2025,Sunday,24,34,55,95,Afternoon thundery showers,Thundery Showers,10,15,NNE
+2025-02-27,2025-02-28T00:00:00+08:00,28/02/2025,Friday,24,33,55,95,Afternoon thundery showers,Thundery Showers,10,25,NE
+2025-02-27,2025-03-01T00:00:00+08:00,01/03/2025,Saturday,24,34,55,95,Afternoon thundery showers,Thundery Showers,10,20,NE
+2025-02-27,2025-03-02T00:00:00+08:00,02/03/2025,Sunday,24,34,55,95,Afternoon thundery showers,Thundery Showers,10,20,NE
+2025-02-27,2025-03-03T00:00:00+08:00,03/03/2025,Monday,24,34,55,95,Afternoon thundery showers,Thundery Showers,5,15,NNE
+2025-02-28,2025-03-01T00:00:00+08:00,01/03/2025,Saturday,24,34,55,95,Afternoon thundery showers,Thundery Showers,10,20,NE
+2025-02-28,2025-03-02T00:00:00+08:00,02/03/2025,Sunday,24,34,55,95,Afternoon thundery showers,Thundery Showers,10,20,NE
+2025-02-28,2025-03-03T00:00:00+08:00,03/03/2025,Monday,24,34,55,95,Afternoon thundery showers,Thundery Showers,5,15,NNE
+2025-02-28,2025-03-04T00:00:00+08:00,04/03/2025,Tuesday,24,34,55,95,Afternoon thundery showers,Thundery Showers,5,15,NW
+2025-03-01,2025-03-02T00:00:00+08:00,02/03/2025,Sunday,24,34,55,95,Afternoon thundery showers,Thundery Showers,10,20,NE
+2025-03-01,2025-03-03T00:00:00+08:00,03/03/2025,Monday,24,34,55,95,Afternoon thundery showers,Thundery Showers,5,15,NNE
+2025-03-01,2025-03-04T00:00:00+08:00,04/03/2025,Tuesday,24,34,55,95,Afternoon thundery showers,Thundery Showers,5,15,NW
+2025-03-01,2025-03-05T00:00:00+08:00,05/03/2025,Wednesday,24,34,55,95,Afternoon thundery showers,Thundery Showers,10,20,WNW

@@ -42,7 +42,7 @@ import requests
 url = "https://api-open.data.gov.sg/v2/real-time/api/psi"
 
 start_date = datetime.datetime(2014, 1, 1)
-end_date = datetime.datetime(2025, 2, 23)
+end_date = datetime.datetime(2025, 2, 28)
 psi_data = []
 current_date = start_date
 

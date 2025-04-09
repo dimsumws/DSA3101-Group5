@@ -6,8 +6,8 @@ from datetime import datetime, timedelta
 # API for windspeed data
 url = "https://api-open.data.gov.sg/v2/real-time/api/wind-speed"
 
-start_date = datetime(2016, 12, 15)
-end_date = datetime(2025,2, 23)
+start_date = datetime(2017, 1, 1)
+end_date = datetime(2025, 3, 1)
 
 windspeed_data = []
 
@@ -62,6 +62,6 @@ else:
     # Group by the desired columns, then compute the average windspeed
     df = df.groupby(['date', 'station_id', 'station_name', 'latitude', 'longitude'])['windspeed'].mean().reset_index()
     df['windspeed'] = df["windspeed"].round(2)
-    file_path = "../datasets/final_data/sentosa_avg_windspeed.csv"
-    df.to_csv(csv_filename, index=False)
-    print(f"Saved {csv_filename}")
+    file_path = "../datasets/final_data/sentosa_avg_windspeed_extra_7.csv"
+    df.to_csv(file_path, index=False)
+    print(f"Saved {file_path}")

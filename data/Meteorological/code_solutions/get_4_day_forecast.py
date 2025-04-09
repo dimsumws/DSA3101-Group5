@@ -17,7 +17,7 @@ def fetch_forecast(date_str):
 def main():
     # Data Gov provides data from March 2016 to Feb 2025
     start_date = datetime(2016, 3, 1)
-    end_date = datetime(2025, 2, 23)
+    end_date = datetime(2025, 2, 28)
     
     latest_records = {}
 
@@ -86,9 +86,8 @@ def main():
             rows.append(row)
 
     df = pd.DataFrame(rows)
-    new_path = "../datasets/final_data/4_day_weather_forecasts.csv"
-    df.to_csv(csv_filename, index=False)
-    print(f"Saved {csv_filename}")
+    new_path = "../datasets/final_data/4_day_weather_forecasts_extra_7.csv"
+    df.to_csv(new_path, index=False)
 
 if __name__ == "__main__":
     main()
